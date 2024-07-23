@@ -1,0 +1,14 @@
+.main-select {
+    all: unset !important;
+    appearance: auto !important;
+    padding: 5px !important;
+    background: transparent !important;
+    color: #ffff !important;
+    text-decoration: none !important;
+}
+option {
+    color: #000;
+}
+.main-select.small {
+    color: #000 !important;
+}
