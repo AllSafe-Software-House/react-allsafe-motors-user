@@ -13,7 +13,7 @@ export default function HeroSection() {
   };
   return (
     <div className="my-7 grid grid-cols-1 gap-4 lg:grid-cols-4">
-      <div className="smallSidebar hidden bg-red-50 lg:block">
+      <div className="smallSidebar hidden bg-[#f8f8f8] lg:block rounded-lg">
         <SidebarElement />
       </div>
       <div className="swiperSide lg:col-span-3 lg:col-start-2">

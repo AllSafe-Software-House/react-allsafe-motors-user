@@ -31,12 +31,10 @@ export default function CardElement({
             alt={alt}
           />
         )}
-        {iconImg && iconImg}
       </a>
+      {iconImg && iconImg}
       <div className="p-1">
-        <a href="#">
-          <h5 className={titleClass}>{title}</h5>
-        </a>
+        <h5 className={titleClass}>{title}</h5>
         <p className={pClass}>{p}</p>
         {buttonClass ? (
           <Link to={to} className={buttonClass}>
