@@ -31,6 +31,7 @@ export default function InfoSection() {
         infinite={true}
         slidesPerView={4}
         spaceBetween={20}
+        res={true}
       />
     </section>
   );

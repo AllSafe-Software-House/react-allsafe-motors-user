@@ -9,13 +9,13 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
 const SwiperElement = ({
-  slidesPerView,
   spaceBetween,
   navigation,
   infinite,
   dots,
   className,
   dataSlides,
+  res,
 }) => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -35,18 +35,17 @@ const SwiperElement = ({
   };
 
   const ar = () => {
-    let item
-    const items = []
-    dataSlides.map((single,i) => {
-      item = (<SwiperSlide key={i}>{single}</SwiperSlide>)
-      items.push(item)
-    })
-    return items
-  }
+    let item;
+    const items = [];
+    dataSlides.map((single, i) => {
+      item = <SwiperSlide key={i}>{single}</SwiperSlide>;
+      items.push(item);
+    });
+    return items;
+  };
   return (
     <Swiper
       key={key}
-      slidesPerView={slidesPerView}
       spaceBetween={spaceBetween}
       autoplay={
         infinite && {
@@ -60,6 +59,22 @@ const SwiperElement = ({
       className={`mySwiper ${className}`}
       loop={true}
       dir={currentLanguage === "ar" ? "rtl" : "ltr"}
+      breakpoints={
+        res && {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        }
+      }
     >
       {ar()}
     </Swiper>
@@ -73,7 +88,8 @@ SwiperElement.propTypes = {
   infinite: PropTypes.bool,
   dots: PropTypes.bool,
   className: PropTypes.string,
-  dataSlides: PropTypes.array.isRequired
+  res: PropTypes.bool,
+  dataSlides: PropTypes.array.isRequired,
 };
 
 export default SwiperElement;
