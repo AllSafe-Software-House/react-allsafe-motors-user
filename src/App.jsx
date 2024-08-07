@@ -27,8 +27,6 @@ function App() {
     <div className="App">
       <Navbar />
       <AppRoutes />
-      <div className="container">
-      </div>
       <NewsLetter />
       <Footer />
     </div>

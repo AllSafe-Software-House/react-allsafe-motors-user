@@ -12,18 +12,20 @@ export default function HeroSection() {
     return arr;
   };
   return (
-    <div className="my-7 grid grid-cols-1 gap-4 lg:grid-cols-4">
-      <div className="smallSidebar hidden bg-[#f8f8f8] lg:block rounded-lg">
-        <SidebarElement />
+    <section className="hero">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
+        <div className="smallSidebar hidden rounded-lg bg-[#f8f8f8] lg:block">
+          <SidebarElement />
+        </div>
+        <div className="swiperSide lg:col-span-3 lg:col-start-2">
+          <SwiperElement
+            dataSlides={items()}
+            dots={true}
+            infinite={false}
+            slidesPerView={1}
+          />
+        </div>
       </div>
-      <div className="swiperSide lg:col-span-3 lg:col-start-2">
-        <SwiperElement
-          dataSlides={items()}
-          dots={true}
-          infinite={false}
-          slidesPerView={1}
-        />
-      </div>
-    </div>
+    </section>
   );
 }

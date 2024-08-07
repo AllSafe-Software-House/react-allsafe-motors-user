@@ -6,5 +6,5 @@ export default function MainButton({ text, buttonClass, to }) {
     buttonClass: PropTypes.string,
     to:PropTypes.string
   };
-  return <Link to={to} className={buttonClass}>{text}</Link>;
+  return <Link to={to} className={`${buttonClass} block`}>{text}</Link>;
 }

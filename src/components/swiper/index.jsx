@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
 const SwiperElement = ({
+  slidesPerView,
   spaceBetween,
   navigation,
   infinite,
@@ -56,7 +57,7 @@ const SwiperElement = ({
       navigation={navigation}
       pagination={dots && pagination}
       modules={[Pagination, Navigation, Autoplay]}
-      className={`mySwiper ${className}`}
+      className={`mySwiper ${className || ''}`}
       loop={true}
       dir={currentLanguage === "ar" ? "rtl" : "ltr"}
       breakpoints={
@@ -70,7 +71,7 @@ const SwiperElement = ({
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: slidesPerView,
             spaceBetween: 50,
           },
         }

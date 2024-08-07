@@ -1,3 +1,9 @@
 body {
     font-family: "Poppins", sans-serif;
 }
+section:not(:first-child) {
+    margin: 3rem 0
+}
+a {
+    display: block;
+}

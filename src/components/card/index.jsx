@@ -21,12 +21,12 @@ export default function CardElement({
 }) {
   return (
     <div
-      className={`${isHorizontal && "flex"} ${cardClass} rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800`}
+      className={`${(isHorizontal && "flex") || ""} ${cardClass || ""} rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800`}
     >
-      <a href="#" className={imgParentClass}>
+      <a href="#" className={imgParentClass || ""}>
         {img && (
           <img
-            className={`${isHorizontal && "h-full"} ${imgClass}`}
+            className={`${isHorizontal && "h-full" || ''} ${imgClass || ""}`}
             src={img}
             alt={alt}
           />
@@ -34,10 +34,10 @@ export default function CardElement({
       </a>
       {iconImg && iconImg}
       <div className="p-1">
-        <h5 className={titleClass}>{title}</h5>
-        <p className={pClass}>{p}</p>
+        <h5 className={titleClass || ""}>{title}</h5>
+        <p className={pClass || ""}>{p}</p>
         {buttonClass ? (
-          <Link to={to} className={buttonClass}>
+          <Link to={to} className={buttonClass || ""}>
             {buttonText}
             {iconButton}
           </Link>
