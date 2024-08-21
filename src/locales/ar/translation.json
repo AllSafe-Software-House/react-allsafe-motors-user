@@ -1,5 +1,11 @@
 {
-  "welcome": "أهلاً",
-  "home": "المنزل",
-  "about": "عنا"
+  "navlinks": {
+    "home": "سيب",
+    "about_us": "سيب Us",
+    "services": "يبليبل",
+    "products": "ليبليبل",
+    "contact_us": "يبليبل Us",
+    "learn_more": "Learn More",
+    "see_all": "See All"
+  }
 }

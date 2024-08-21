@@ -1,15 +1,19 @@
-import HeroSection from "../components/sectionHero";
-import InfoSection from "../components/sectionInfo";
-import AdSection from "../components/sectionAd";
-import Categories from "../components/sectionCategory";
+import AboutUsSection from "../components/AboutUsSection/AboutUsSection";
+import ExploreSection from "../components/ExploreSection/ExploreSection";
+import FairPriceSection from "../components/FairPriceSection/FairPriceSection";
+import HeroSection from "../components/HeroSection/HeroSection";
+import ServicesSection from "../components/ServicesSection/ServicesSection";
+import VehiclesSection from "../components/VehiclesSection/VehiclesSection";
+import WhyChooseUsSection from "../components/WhyChooseUsSection/WhyChooseUsSection";
 
 export default function Home() {
-  return (
-    <div className="container">
-      <HeroSection />
-      <InfoSection />
-      <AdSection/>
-      <Categories/>
-    </div>
-  );
+  return <main>
+    {/* <HeroSection /> */}
+    <ExploreSection />
+    <FairPriceSection />
+    <WhyChooseUsSection />
+    <AboutUsSection />
+    <ServicesSection />
+    <VehiclesSection />
+  </main>
 }

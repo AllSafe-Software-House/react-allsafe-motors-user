@@ -8,10 +8,10 @@ import translationAr from './locales/ar/translation.json';
 // the translations
 const resources = {
   en: {
-    translation: translationEN
+    global: translationEN
   },
   ar: {
-    translation: translationAr
+    global: translationAr
   }
 };
 

@@ -1,5 +1,22 @@
 {
-  "welcome": "Welcome to React",
-  "home": "Home",
-  "about": "About"
+  "navlinks": {
+    "home": "Home",
+    "about_us": "About Us",
+    "services": "Services",
+    "products": "Vehicles",
+    "contact_us": "Contact Us",
+    "learn_more": "Learn More",
+    "see_all": "See All"
+  },
+  "custom-text":{
+    "exploreTitle":"Explore Our Premium Brands",
+    "fairPrice":"Get A Fair Price For Your Car Sell To Us Today",
+    "getStarted":"Get Started",
+    "whyChooseUs":"Why Choose Us?",
+    "export":"Explore Arkan",
+    "ourServices":"Our Services",
+    "viewAll":"View All",
+    "exportV":"Explore All Vehicles",
+    "explore":"Explore"
+  }
 }
