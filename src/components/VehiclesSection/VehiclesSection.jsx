@@ -15,7 +15,7 @@ export default function VehiclesSection() {
                         <h3 className='text-[18px] md:text-[22px] lg:text-[32px] font-bold'>{t('custom-text.exportV')}</h3>
                     </Fade>
                     <Fade direction='up' delay={200}>
-                        <Link className='flex group'>
+                        <Link to={'/vehicles'} className='flex group'>
                             {t('custom-text.viewAll')}
                             <MdArrowOutward className='ms-2 group-hover:rotate-45 duration-150 text-[22px]' />
                         </Link>

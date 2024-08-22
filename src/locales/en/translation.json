@@ -8,15 +8,42 @@
     "learn_more": "Learn More",
     "see_all": "See All"
   },
-  "custom-text":{
-    "exploreTitle":"Explore Our Premium Brands",
-    "fairPrice":"Get A Fair Price For Your Car Sell To Us Today",
-    "getStarted":"Get Started",
-    "whyChooseUs":"Why Choose Us?",
-    "export":"Explore Arkan",
-    "ourServices":"Our Services",
-    "viewAll":"View All",
-    "exportV":"Explore All Vehicles",
-    "explore":"Explore"
+  "custom-text": {
+    "exploreTitle": "Explore Our Premium Brands",
+    "fairPrice": "Get A Fair Price For Your Car Sell To Us Today",
+    "getStarted": "Get Started",
+    "whyChooseUs": "Why Choose Us?",
+    "export": "Explore Arkan",
+    "ourServices": "Our Services",
+    "viewAll": "View All",
+    "exportV": "Explore All Vehicles",
+    "explore": "Explore",
+    "continue": "Continue"
+  },
+  "placeholders": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "phonenumber": "Phone Number",
+    "address": "Address",
+    "complete": "Do you want to complete the purchase process?",
+    "yes": "Yes",
+    "no": "No",
+    "message": "Message",
+    "search": "Search",
+    "filter": "Filter",
+    "submit": "Send it to the Baqari Motors",
+    "subscribe": "Subscribe",
+    "payment_method": "Payment Method",
+    "cash": "Cash",
+    "installment": "installment"
+  },
+  "payment": {
+    "arkan": "Arkan installments",
+    "arkanText": "The installment plan offered by Arkan Company allows you to pay 40%, 50%, or 60% of the total amount upfront, with the remaining balance being paid in installments.This installment system is quite flexible and customer-friendly, making it easier to manage payments according to your financial situation.",
+    "natural": "Natural installments",
+    "naturalText": "This installment plan is the well-known system where you pay 20% upfront, and the remaining balance is paid in installments. This system is quite popular and offers a manageable way to make large purchases without straining your budget.",
+    "cash": "Cash",
+    "cashText": "You can fully pay the total amount in cash, which is priced at $600.72. This is an excellent investment, and we’re confident you’ll be very satisfied with the value and quality you’re receiving. If you have any questions or need further assistance, we're here to help make the process as smooth as possible for you."
   }
 }

@@ -63,7 +63,7 @@ export default function CustomCard({ image, name, disc, price, gear, miles, fuel
                     </div>
                     <div className='mt-2 flex items-center justify-between pt-5 border-t border-white'>
                         <h4 className='text-base font-bold'>{price}</h4>
-                        <Link className='flex text-[#f00] group'>
+                        <Link to={'/vehicles/vehicle-details'} className='flex text-[#f00] group'>
                             {t('custom-text.viewAll')}
                             <MdArrowOutward className='ms-2 group-hover:rotate-45 duration-150 text-[22px]' />
                         </Link>

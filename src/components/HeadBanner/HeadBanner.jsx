@@ -12,6 +12,7 @@ export default function HeadBanner({ text, disc, bg }) {
                     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                     url('${bg}')
                 `,
+                backgroundPosition: "50% 50%"
                 }}
             >
                 <img src={light} className='absolute bottom-0 right-0' alt="light" />
