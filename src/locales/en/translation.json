@@ -18,7 +18,13 @@
     "viewAll": "View All",
     "exportV": "Explore All Vehicles",
     "explore": "Explore",
-    "continue": "Continue"
+    "continue": "Continue",
+    "contact":"Get In Touch",
+    "discover": "Discover our office locations",
+     "direction": "Get Direction",
+     "aboutText":"What is Arkan and how valid is it?",
+     "buy":"Buy Products",
+     "overview":"Our Company Overview"
   },
   "placeholders": {
     "first_name": "First Name",

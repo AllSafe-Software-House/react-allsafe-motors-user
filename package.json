@@ -16,6 +16,7 @@
     "@tailwindcss/typography": "^0.5.14",
     "axios": "^1.7.2",
     "i18next": "^23.12.1",
+    "lenis": "^1.1.11",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "prop-types": "^15.8.1",
