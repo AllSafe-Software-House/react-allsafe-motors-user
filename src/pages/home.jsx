@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AboutUsSection from "../components/AboutUsSection/AboutUsSection";
 import ExploreSection from "../components/ExploreSection/ExploreSection";
 import FairPriceSection from "../components/FairPriceSection/FairPriceSection";
@@ -7,8 +8,11 @@ import VehiclesSection from "../components/VehiclesSection/VehiclesSection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection/WhyChooseUsSection";
 
 export default function Home() {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+},[])
   return <main>
-    {/* <HeroSection /> */}
+    <HeroSection />
     <ExploreSection />
     <FairPriceSection />
     <WhyChooseUsSection />

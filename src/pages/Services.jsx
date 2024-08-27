@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeadBanner from '../components/HeadBanner/HeadBanner'
 import { useTranslation } from 'react-i18next'
 import CustomCard from '../components/CustomCard/CustomCard'
@@ -6,6 +6,9 @@ import { Fade } from 'react-awesome-reveal'
 
 export default function Services() {
     const { t } = useTranslation('global')
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     return <main>
         <HeadBanner text={t('navlinks.services')} bg={'https://s3-alpha-sig.figma.com/img/3f18/64e8/65a46bc0aa70eb6014b45e78e83dab49?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=o91ujKJudC4S6baeGmdlA6lYVIgVFkmcSsRsYOAPqaubyDqMzz28y3N2~f3hHFOaThLy6t1n7FaCh4z1rpR-pm2~4MVRigjxZCVNLulJ0DuhSbk7Rf6az73a4ZeUnE0wRm1e60RXRnwq5oX2LSji5xINB4AgmjfICpSEca1fbLvSBg2KBqeEvporB7Dmsztnm8Mo6KGCTWTin7rA3RpWWlAEkv3vkHC5wEcjgOfT8KR9C5xLRSTp~OpY3QwizvkIc5dtV8DcY0INVv~XeAjJPLgUfbeHZnB683iuJTa04JPzNpxExPUslW7Xg1YTVP8jU2ROEsjbV5MzFQxNYEMC2g__'} />
         <section className='py-20'>

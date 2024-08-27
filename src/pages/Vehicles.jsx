@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import HeadBanner from '../components/HeadBanner/HeadBanner'
 import { useTranslation } from 'react-i18next'
 import { Fade } from 'react-awesome-reveal';
@@ -7,6 +7,9 @@ import CustomCard from '../components/CustomCard/CustomCard';
 export default function Vehicles() {
     const { t } = useTranslation('global')
     const [activeTab, setActiveTab] = useState(0);
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     return <main>
         <HeadBanner text={t('navlinks.products')} bg={'https://s3-alpha-sig.figma.com/img/f311/ad26/49ec50a8d80e556c60aa0941fe5cba4e?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GKVuCjPleiYoMQ8OWA6roalNyDx4jffndi6I3PLMUBEDcWfIgnsqJCIu2uIZWjb0HD8~I9UyE5W5~~Qqn~XGdMjF-MQ50o32AbvSAaad90GZNBcmgeCDPmy3uKVv~zvJppVnKg1xIBhA3W6bHdHQXndsxTcjIn2AD~GqkG~0S4FcFuIX8FsR0wo27797CnbFoljy-jmQ04m9DmS7WEtMC9injPyDMLOHj6gB-WgK9q4PJwHspzd97gA8XBR6Y0m8EfEANH0XScJb6yQsKISw9pz5rOMI-c33Pn2GyEngmg8rISzJkMzbpvgO2kcWvYee4Ty4CI7V4yPF3HQWtmHqNQ__'} />
         <section className='py-20'>

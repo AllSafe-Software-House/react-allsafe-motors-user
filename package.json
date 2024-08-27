@@ -15,6 +15,7 @@
     "@heroicons/react": "^2.1.5",
     "@tailwindcss/typography": "^0.5.14",
     "axios": "^1.7.2",
+    "flowbite": "^2.5.1",
     "i18next": "^23.12.1",
     "lenis": "^1.1.11",
     "prettier": "^3.3.3",

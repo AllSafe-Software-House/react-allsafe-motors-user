@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import { useTranslation } from 'react-i18next'
 import mars from '../assets/images/Image Forground.png'
@@ -9,6 +9,9 @@ import { FaPhone } from 'react-icons/fa'
 import MainButton from '../components/MainButton/MainButton'
 export default function ContactUs() {
     const { t } = useTranslation('global')
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     return <main>
         <section className='pt-32 relative pb-16 overflow-hidden'>
             <img src={right} className='absolute right-0 top-0 z-[-1]' alt="vector" />
@@ -73,7 +76,7 @@ export default function ContactUs() {
                                             <textarea name='message' className='my-1 bg-[#FFFFFF0D] border-[#FFFFFF33] border py-2 px-4 outline-none rounded-lg w-full' rows={10} placeholder={t('placeholders.message')}></textarea>
                                         </div>
                                         <div className='px-2 my-3 w-full'>
-                                        <MainButton submit className={'w-full rounded-lg justify-center'} text={'Send It'}/>
+                                        <MainButton submit className={'w-full rounded-lg justify-center'} text={t('placeholders.submit')}/>
                                         </div>
                                     </div>
                                 </Fade>

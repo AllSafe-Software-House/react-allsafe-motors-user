@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal';
 import { BsFuelPump } from 'react-icons/bs';
 import { CiCalendarDate } from 'react-icons/ci';
@@ -18,13 +18,16 @@ export default function VehicleDetails() {
         'https://s3-alpha-sig.figma.com/img/b715/e80e/cd27bafb01ffb424d8802f899a95b2ad?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pQjOOOIlSo~sBQz9HMUxvG2temQaFcLjFtvsmpd8-XMwETIqA4Xf6p9NM-Q12d2lse~81xxNJ~PNALldwZoIPbBD686p3u3tr7bz3izvrkP3bTFQGa-6bhp99ziw0g5Od~Zwa0smOS2XUHasMoqh1TEcq1QEia1Z0DC~lJscPqtYWii67jVXM76A2mUeJS5g5VNHyEf5aAZy1oGU~TWI66wJrYHT~GiAKLDjx1UJOODDAAwALEz9AeQhnfmHBhMjxXRPQ54L2b6nNRHz0oGP2EWJmLGX~MItGVS8iYgk68DWh92tyCaPEvTdQMu-mYgPANq26~02uGlMisJtqvzk1A__',
         'https://s3-alpha-sig.figma.com/img/5edc/831e/0b3ab5df71c63fdc600c1a13a8962f51?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hZAr3AWew2oRvN~8vGXfBXxCtxZmIrW0r-cjpsVT1pTBQwne0CR5U-5vD2EwM30k8vd1~Oi1wLRX9GAIkdS9Pnns3t2PLfog3YDcq~mJS7Z9NMTi2j4r-blZtWpGY~nKZiLz0333L~NLZkrzQkTKG2yFd8CqdZU5bWdBXZnThICPWA0lfHlhTg8TGc00OSVxeUfdnFl~zfyEwR9K6Ar88O~ca0v1lH9UgfIsR1LedWb~FDGylsYSoC-c~HbIQf0L01FYXINtTXp7aGz8SktlCnaZg3LsC6uhiXw2GZCKHwdPJ1w~OVYWDrKWBpmti7ioW5G55e38mlSmspqQwmUWiQ__',
         'https://s3-alpha-sig.figma.com/img/2d20/3977/c60d30e50e3c0655ca7cc456e96de1cb?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=b0YXe-R75Kx4P1ei6U1LFCQ2X3WjVzrN0qk14RhANozVyJRWjJMd56fqQWSFiyOS65LzOlTIuDbBhnf6WtFkqlvKMlt02K3OPgFiNPyuAQBfk2AOIz1AmcFTLCwPNPlxIfwCj38YS7sYRASOw2mtyKVUBxcNQ3RWJuDVfgCKvKAkuTeDX2Zqu83sHfmlNez0lOtOK30eZJEbIUEDJwdcRi-Wd8Gksc732haFZypaMXcN7qAR4rIqSWje9V3LKdeQGM5FJ7CV3asutJm6TK-bAx0iFNCI2ZJB2gzYqyARN-Ju9WPoo9ctMXTAMS6kLNgXYXdmuotpzxhL~2E6Io1XoQ__']
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return <main>
         <section className='pt-32 relative'>
             <img src={right} className='absolute right-0 top-0 z-[-1]' alt="vector" />
             <img src={left} className='absolute left-0 bottom-0 z-[-1]' alt="vector" />
             <div className="container">
-                <div className="flex flex-wrap">
-                    <div className="w-full my-4 p-0 md:p-10 lg:p-0">
+                <div className="lg:grid lg:grid-cols-2 lg:gap-10">
+                    <div className="my-5 p-0 lg:p-0">
                         <div className='h-[500px] bg-[#FFFFFF0F] rounded-xl py-5'>
                             <Fade className='w-full h-full' duration={1200}>
                                 <img src={mainImg} className='w-full h-full rounded-xl object-contain' alt="chair" />
@@ -61,7 +64,7 @@ export default function VehicleDetails() {
                             ))}
                         </Swiper>
                     </div>
-                    <div className="w-full my-4">
+                    <div className="my-5">
                         <Fade>
                             <div className='flex h-full flex-col justify-center'>
                                 <div>

@@ -17,7 +17,7 @@ function Navbar() {
         { link: t("navlinks.products"), path: '/vehicles' },
         { link: t("navlinks.contact_us"), path: '/contact-us' },
     ]
-
+    const lang = localStorage.getItem('lang')
     return <>
         <SideBar />
         <header className='fixed w-full z-[9999]'>
@@ -26,7 +26,7 @@ function Navbar() {
                     <div className="flex items-center justify-between">
                         <div className="logo">
                             <Link to={'/'}>
-                                <img src="https://s3-alpha-sig.figma.com/img/c9dd/63b5/15ab00969e33794e08e612177e09d4bf?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=N4c9LVt3ljQR5Zc4Ex7MavD5Yk-EjkBh6eScot8keZlkvU9-Ndn85v~Q9soJTQGNfolG4LYXPv5xPjf4C~eWU~X-tsVpKelL2rGWAemgVgF~LNRzHxiMuKbt4FXZsLsNz4G-2x9IDCOs2hWURl6N8HhSu7BLC50ZIGzJhDg4xwbRDmycKmVC4LtPqR42jOUbfyKoJpSRBwyN3ACedJ-Fyl3g2Wa2oN-Gi9CogK45JE0IvmMWYzPliPrJT3v9hFdcV9SfsGHn4b8GagBxqDIrKYtkjTQVq543M55ZduKXlRkHVquk3ED1e1or3weE3aJ0khgIhIEHeTI83ru09uO6Gw__" className='w-[100px]' alt="AL-Baqari Motors" />
+                                <img src="https://s3-alpha-sig.figma.com/img/c9dd/63b5/15ab00969e33794e08e612177e09d4bf?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UGKJtJl7p-8JBpkncoWxiC-vtDWCEI0DLOGP81BfaRmCbsFu2yKA1L0rCeWcMJnSaQmkrl1J~m6zTXZ7UytT3-JtyghTw2XmVFyGEhx3kWzUXlwge55zI3UgcQOgHdH5vYZQt3Annooi9B2-oSSXf8eJ8FlR3UkuxLuH0DrPGLklD-F2h3WxuogzJ-y2SRXJ-BjTDnu9Obk1mkJ5k8pSdeCtO6poA7WusCYk8~QutSiHc90heTiluu6bSdWFZZtS7ckyeLqcf1ON~ej9asiFZ5K4iXRIRcS-AViehkgBENG5x3kj5h9vAE1iKSnW4F~qAYqUGyCpGcge2LoJ7a9wXQ__" className='w-[100px]' alt="AL-Baqari Motors" />
                             </Link>
                         </div>
                         <ul className='items-center hidden lg:flex'>
@@ -37,7 +37,7 @@ function Navbar() {
                             )}
                         </ul>
                         <div className='flex items-center'>
-                            {arLang ? <span onClick={() => handelChangeLang("en")} className='text-[#BDCADB] me-6 hidden lg:inline cursor-pointer font-semibold hover:text-[#FF0000] duration-[0.3s]'>EN</span> :
+                            {lang == 'ar' ? <span onClick={() => handelChangeLang("en")} className='text-[#BDCADB] me-6 hidden lg:inline cursor-pointer font-semibold hover:text-[#FF0000] duration-[0.3s]'>EN</span> :
                                 <span onClick={() => handelChangeLang("ar")} className='text-[#BDCADB] me-6 cursor-pointer hidden lg:inline font-semibold hover:text-[#FF0000] duration-[0.3s]'>AR</span>
                             }
                             <Link to={'/vehicles'}>

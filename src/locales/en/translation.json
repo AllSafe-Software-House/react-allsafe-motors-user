@@ -24,7 +24,10 @@
      "direction": "Get Direction",
      "aboutText":"What is Arkan and how valid is it?",
      "buy":"Buy Products",
-     "overview":"Our Company Overview"
+     "overview":"Our Company Overview",
+     "faq":"Frequently asked questions",
+     "ourMission":"Our mission",
+     "ourStory":"Our story"
   },
   "placeholders": {
     "first_name": "First Name",
@@ -38,7 +41,7 @@
     "message": "Message",
     "search": "Search",
     "filter": "Filter",
-    "submit": "Send it to the Baqari Motors",
+    "submit": "Send it to Arkan",
     "subscribe": "Subscribe",
     "payment_method": "Payment Method",
     "cash": "Cash",

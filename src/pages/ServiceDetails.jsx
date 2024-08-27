@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Fade } from 'react-awesome-reveal'
 
 export default function ServiceDetails() {
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     return <main>
         <Fade>
             <section className='h-[40vh] flex items-center justify-center'>

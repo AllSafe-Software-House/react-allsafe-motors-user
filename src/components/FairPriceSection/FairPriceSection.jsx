@@ -10,8 +10,8 @@ export default function FairPriceSection() {
     return <>
         <section className='py-16 relative text-white'>
             <div className="container">
-                <div className="flex flex-wrap gutter-x-6">
-                    <div className='w-full my-2 lg:w-1/2'>
+                <div className="grid lg:grid-cols-2 gap-20">
+                    <div className='w-full my-2'>
                         <div className='flex flex-wrap gutter-x-6 items-start'>
                             <div className='w-1/2'>
                                 <div className='w-full h-1/2 mb-10'>
@@ -25,7 +25,7 @@ export default function FairPriceSection() {
                                     </Fade>
                                 </div>
                             </div>
-                            <div className='w-1/2'>
+                            <div className='w-1/2 px-6'>
                                 <div>
                                     <Fade delay={400}>
                                         <img src='https://s3-alpha-sig.figma.com/img/bbb8/fc71/39cff42af5861aca87abcb1e0835ca51?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=g6pIoCN0Q3MP2gcwubQvjamUJBtFqgkRDovMsnsP7spnRKnozIJKIo~VVUr-zorFnYOq8tTwBzuokI4lupGmyiy-2PymxZtch-~f164wc3auCvGOBzkgcRZg3~m9oqIT7N5bEUtsiy3cfICGsBvcfloLKO9V3FSQ5A0rX89oZe~0K49pOawC-0RigVQOUPacI8tsoX6IQOSI7EN6z0jHGSnJ00AfAv9rt2hw-9eelB~2UYR2AS4adAD-fsSBt4u-X41xg3STXxXWB~Kt8LERtv1Iv6YDK3phxuuNe0X4FCkfTAUs85wZ77DuPVOVfQzTlqbaWhrR2RGmP3tRxtmcNg__' alt="pic" className='w-full' />
@@ -34,7 +34,7 @@ export default function FairPriceSection() {
                             </div>
                         </div>
                     </div>
-                    <div className='w-full my-2 lg:ps-36 lg:w-1/2'>
+                    <div className='w-full my-2'>
                         <div className='prose'>
                             <Fade>
                                 <h2 className='font-main mb-4 font-bold text-[20px] md:text-[32px]'>{t('custom-text.fairPrice')}</h2>

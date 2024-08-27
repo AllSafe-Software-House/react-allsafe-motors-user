@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "./i18n";
 import "./index.css";
 import 'swiper/css';
+import 'flowbite/dist/flowbite.min.js'
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
