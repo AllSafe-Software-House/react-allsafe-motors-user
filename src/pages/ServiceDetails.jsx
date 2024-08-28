@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Fade } from 'react-awesome-reveal'
+import { TranslateContext } from '../context/TranslateContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchServicesDetalisData } from '../redux/slices/serviceDetailsSlice';
 
 export default function ServiceDetails() {
+    let { data, isLoading, error } = useSelector(({ servicesDetails }) => servicesDetails);
+    let dispatch = useDispatch();
+    const { arLang } = useContext(TranslateContext);
     useEffect(()=>{
         window.scrollTo(0,0)
     },[])
+    useEffect(() => {
+        dispatch(fetchServicesDetalisData('id'))
+      }, [arLang])
     return <main>
         <Fade>
             <section className='h-[40vh] flex items-center justify-center'>

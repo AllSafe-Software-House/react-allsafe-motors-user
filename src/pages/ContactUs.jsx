@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import { useTranslation } from 'react-i18next'
 import mars from '../assets/images/Image Forground.png'
@@ -7,11 +7,22 @@ import right from '../assets/images/VectorR.png'
 import middle from '../assets/images/Vector.png'
 import { FaPhone } from 'react-icons/fa'
 import MainButton from '../components/MainButton/MainButton'
+import { useDispatch, useSelector } from 'react-redux'
+import { TranslateContext } from '../context/TranslateContext'
+import { fetchContactUsData } from '../redux/slices/contactSlice'
 export default function ContactUs() {
     const { t } = useTranslation('global')
+    let { data, isLoading, error } = useSelector(({ contactData }) => contactData);
+    let dispatch = useDispatch()
+    const { arLang } = useContext(TranslateContext);
     useEffect(()=>{
         window.scrollTo(0,0)
     },[])
+    useEffect(() => {
+        dispatch(fetchContactUsData())
+        if (error) {
+        }
+      }, [arLang])
     return <main>
         <section className='pt-32 relative pb-16 overflow-hidden'>
             <img src={right} className='absolute right-0 top-0 z-[-1]' alt="vector" />
