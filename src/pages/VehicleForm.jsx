@@ -32,14 +32,14 @@ export default function VehicleForm() {
                             className="my-1 bg-black border-[#FFFFFF33] border py-2 px-4 outline-none rounded-lg w-full"
                         >
                             <option value={''} className='hover:bg-red-500' disabled selected>{t('placeholders.payment')}</option>
-                            <option value={'option1'} className='hover:bg-red-500' >{t('payment.arkan')}</option>
+                            <option value={'option1'} className='hover:bg-red-500' >{t('payment.allSafe')}</option>
                             <option value={'option2'} className='hover:bg-red-500'>{t('payment.natural')}</option>
                             <option value={'option3'} className='hover:bg-red-500'>{t('payment.cash')}</option>
                         </select>
                         <div className='border-b px-4 mt-3 content'>
                             {selectedOption === 'option1' ? <>
-                                <h2 className='text-[20px] font-medium'>{t('payment.arkan')}</h2>
-                                <p className='my-2'>{t('payment.arkanText')}</p>
+                                <h2 className='text-[20px] font-medium'>{t('payment.allSafe')}</h2>
+                                <p className='my-2'>{t('payment.allSafeText')}</p>
                             </> : selectedOption === 'option2' ? <>
                                 <h2 className='text-[20px] font-medium'>{t('payment.natural')}</h2>
                                 <p className='my-2'>{t('payment.naturalText')}</p>
