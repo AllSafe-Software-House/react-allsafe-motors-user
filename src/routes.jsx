@@ -1,13 +1,13 @@
 // routes.jsx
 import { Route, Routes } from "react-router-dom";
+import About from "./pages/about";
+import ContactUs from "./pages/ContactUs";
 import Home from "./pages/home";
-import Services from "./pages/Services";
 import ServiceDetails from "./pages/ServiceDetails";
-import Vehicles from "./pages/Vehicles";
+import Services from "./pages/Services";
 import VehicleDetails from "./pages/VehicleDetails";
 import VehicleForm from "./pages/VehicleForm";
-import ContactUs from "./pages/ContactUs";
-import About from "./pages/about";
+import Vehicles from "./pages/Vehicles";
 
 const AppRoutes = () => {
   return (

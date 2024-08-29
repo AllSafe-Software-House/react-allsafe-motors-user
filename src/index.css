@@ -288,6 +288,9 @@ body {
 .float{
   animation: float 3s ease-in-out infinite;
 }
+.swiper-button-prev, .swiper-button-next{
+  color: white !important;
+}
 @keyframes float {
 	0% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);

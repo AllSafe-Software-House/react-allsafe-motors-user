@@ -45,7 +45,8 @@
     "subscribe": "اشترك",
     "payment_method": "طريقة الدفع",
     "cash": "نقدًا",
-    "installment": "تقسيط"
+    "installment": "تقسيط",
+    "payment": "اختر من طرق الدفع لدينا"
   },
   "payment": {
     "arkan": "تقسيط أركان",

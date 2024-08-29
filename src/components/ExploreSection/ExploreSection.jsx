@@ -10,7 +10,7 @@ export default function ExploreSection() {
                 <h2 className='font-main mb-4 font-bold text-[25px] md:text-[32px]'>{t('custom-text.exploreTitle')}</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 flex-wrap">
                     <div className='w-full my-2'>
-                        <div className='bg-[#121212] rounded-lg p-7'>
+                        <div className='bg-[#121212] hover:bg-black hover:border-white border border-transparent duration-200 rounded-lg p-7'>
                             <div className='text-center'>
                                 <TbCarSuv className='mx-auto text-[30px]' />
                                 <p className='text-[20px]'>SUV</p>
@@ -18,7 +18,7 @@ export default function ExploreSection() {
                         </div>
                     </div>
                     <div className='w-full my-2'>
-                        <div className='bg-[#121212] rounded-lg p-7'>
+                        <div className='bg-[#121212] hover:bg-black hover:border-white border border-transparent duration-200 rounded-lg p-7'>
                             <div className='text-center'>
                                 <TbCarSuv className='mx-auto text-[30px]' />
                                 <p className='text-[20px]'>SUV</p>
@@ -26,7 +26,7 @@ export default function ExploreSection() {
                         </div>
                     </div>
                     <div className='w-full my-2'>
-                        <div className='bg-[#121212] rounded-lg p-7'>
+                        <div className='bg-[#121212] hover:bg-black hover:border-white border border-transparent duration-200 rounded-lg p-7'>
                             <div className='text-center'>
                                 <TbCarSuv className='mx-auto text-[30px]' />
                                 <p className='text-[20px]'>SUV</p>
@@ -34,7 +34,7 @@ export default function ExploreSection() {
                         </div>
                     </div>
                     <div className='w-full my-2'>
-                        <div className='bg-[#121212] rounded-lg p-7'>
+                        <div className='bg-[#121212] hover:bg-black hover:border-white border border-transparent duration-200 rounded-lg p-7'>
                             <div className='text-center'>
                                 <TbCarSuv className='mx-auto text-[30px]' />
                                 <p className='text-[20px]'>SUV</p>
@@ -42,7 +42,7 @@ export default function ExploreSection() {
                         </div>
                     </div>
                     <div className='w-full my-2'>
-                        <div className='bg-[#121212] rounded-lg p-7'>
+                        <div className='bg-[#121212] hover:bg-black hover:border-white border border-transparent duration-200 rounded-lg p-7'>
                             <div className='text-center'>
                                 <TbCarSuv className='mx-auto text-[30px]' />
                                 <p className='text-[20px]'>SUV</p>
@@ -50,7 +50,7 @@ export default function ExploreSection() {
                         </div>
                     </div>
                     <div className='w-full my-2'>
-                        <div className='bg-[#121212] rounded-lg p-7'>
+                        <div className='bg-[#121212] hover:bg-black hover:border-white border border-transparent duration-200 rounded-lg p-7'>
                             <div className='text-center'>
                                 <TbCarSuv className='mx-auto text-[30px]' />
                                 <p className='text-[20px]'>SUV</p>

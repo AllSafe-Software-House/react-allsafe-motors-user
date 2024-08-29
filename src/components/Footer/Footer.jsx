@@ -1,12 +1,13 @@
 import React from 'react'
-import MainButton from '../MainButton/MainButton'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { BsFuelPump } from 'react-icons/bs'
-import { GiGearStickPattern } from 'react-icons/gi'
 import { CiCalendarDate } from 'react-icons/ci'
-import { MdOutlineSpeed } from 'react-icons/md'
+import { FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { GiGearStickPattern } from 'react-icons/gi'
 import { IoIosPhonePortrait } from 'react-icons/io'
+import { MdOutlineSpeed } from 'react-icons/md'
+import { Link } from 'react-router-dom'
+import MainButton from '../MainButton/MainButton'
 
 export default function Footer({ prod = true }) {
     const { t } = useTranslation('global')
@@ -81,16 +82,33 @@ export default function Footer({ prod = true }) {
                     Ready to find your perfect ride?<br />Explore our collection today.
                 </h2>
 
-                <Link className="mt-8 xl:mt-12 px-12 py-5 text-lg font-medium leading-tight inline-block bg-[#f00] rounded-full shadow-xl border border-transparent hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-999 focus:ring-sky-500" >{t('navlinks.contact_us')}</Link>
+                <Link to={'/contact-us'} className="mt-8 xl:mt-12 px-12 py-5 text-lg font-medium leading-tight inline-block bg-[#f00] rounded-full shadow-xl border border-transparent hover:bg-white hover:text-black duration-200" >{t('navlinks.contact_us')}</Link>
                 <div className="mt-14 xl:mt-20">
-                <ul className='items-center mx-auto flex justify-center'>
-                            {links.map((link, i) =>
-                                <li key={i} className='mx-7'>
-                                    <Link className="text-white font-semibold hover:text-[#FF0000] duration-[0.3s]" to={link.path}>{link.link}</Link>
-                                </li>
-                            )}
-                        </ul>
-                    <p className="mt-7 inline-block text-base">© 2024 <a href="allsafeeg.com" target='_blank' className='text-blue-600 inline underline'>All Safe.com.</a> All rights reserved.</p>
+                    <ul className='items-center mx-auto mb-10 flex justify-center'>
+                        <li className='mx-7'>
+                            <Link className="text-white font-semibold hover:text-[#FF0000] duration-[0.3s]" >
+                                <FaFacebookF className='text-inherit text-[25px]' />
+                            </Link>
+                        </li>
+                        <li className='mx-7'>
+                            <Link className="text-white font-semibold hover:text-[#FF0000] duration-[0.3s]" >
+                                <FaLinkedin className='text-inherit text-[25px]' />
+                            </Link>
+                        </li>
+                        <li className='mx-7'>
+                            <Link className="text-white font-semibold hover:text-[#FF0000] duration-[0.3s]" >
+                                <FaInstagram className='text-inherit text-[25px]' />
+                            </Link>
+                        </li>
+                    </ul>
+                    <ul className='items-center mx-auto flex justify-center'>
+                        {links.map((link, i) =>
+                            <li key={i} className='mx-7'>
+                                <Link className="text-white font-semibold hover:text-[#FF0000] duration-[0.3s]" to={link.path}>{link.link}</Link>
+                            </li>
+                        )}
+                    </ul>
+                    <p className="mt-7 inline-block text-base">© 2024 <a href="https://www.allsafeeg.com/en" target='_blank' className='text-blue-600 inline underline'>All Safe.com.</a> All rights reserved.</p>
                 </div>
             </div>
         </footer>

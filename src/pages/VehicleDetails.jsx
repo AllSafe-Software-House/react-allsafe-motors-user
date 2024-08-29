@@ -6,6 +6,9 @@ import { GiGearStickPattern } from 'react-icons/gi';
 import { MdOutlineSpeed } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Controller } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import MainButton from '../components/MainButton/MainButton';
 import { useTranslation } from 'react-i18next';
 import CustomCard from '../components/CustomCard/CustomCard';
@@ -14,12 +17,14 @@ import right from '../assets/images/VectorR.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { TranslateContext } from '../context/TranslateContext';
 import { fetchProductDetalisData } from '../redux/slices/vehicleDetailsSlice';
+
 export default function VehicleDetails() {
     const { t } = useTranslation('global')
+
     let { data, isLoading, error } = useSelector(({ productDetails }) => productDetails);
     const { arLang } = useContext(TranslateContext);
     let dispatch = useDispatch();
-    const [mainImg, setMainImg] = useState('https://s3-alpha-sig.figma.com/img/5e04/709e/6424eb18f47268bd197a88c3bc96dff5?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UQWyaX3~FEgarfsuc5-~sMs2AFORFVmTvHQ6zyscLzqp6fbd7fsPEWVb-p-1c-Fah3l4x-L3za4uKznRgVDtMt0YxSpBgJwVnvaJIlopELQ90t5qd2-Kt-7UzDPjaEytJrfUXxBBTHK8bwPzsatvxpicJRPqhJPMU4NFYYvJszo1bEPogBONJ8FyRNw7i2Uk6LwPrI6K4ROTe2WrgnYbG80oM6x~FfsaIQEtz7uaMoOa-I1QaEZOBY47bYi7JjT6OesG4f3YW~3QLVjqk~VEqB13Gj8VkzNo~nIbdCC6cZY7VuCVt~7JUqmhoClTgHdVoz88wQ98e7Lc4WvlZzmzwQ__');
+    // const [mainImg, setMainImg] = useState('https://s3-alpha-sig.figma.com/img/5e04/709e/6424eb18f47268bd197a88c3bc96dff5?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UQWyaX3~FEgarfsuc5-~sMs2AFORFVmTvHQ6zyscLzqp6fbd7fsPEWVb-p-1c-Fah3l4x-L3za4uKznRgVDtMt0YxSpBgJwVnvaJIlopELQ90t5qd2-Kt-7UzDPjaEytJrfUXxBBTHK8bwPzsatvxpicJRPqhJPMU4NFYYvJszo1bEPogBONJ8FyRNw7i2Uk6LwPrI6K4ROTe2WrgnYbG80oM6x~FfsaIQEtz7uaMoOa-I1QaEZOBY47bYi7JjT6OesG4f3YW~3QLVjqk~VEqB13Gj8VkzNo~nIbdCC6cZY7VuCVt~7JUqmhoClTgHdVoz88wQ98e7Lc4WvlZzmzwQ__');
     const images = ['https://s3-alpha-sig.figma.com/img/5e04/709e/6424eb18f47268bd197a88c3bc96dff5?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UQWyaX3~FEgarfsuc5-~sMs2AFORFVmTvHQ6zyscLzqp6fbd7fsPEWVb-p-1c-Fah3l4x-L3za4uKznRgVDtMt0YxSpBgJwVnvaJIlopELQ90t5qd2-Kt-7UzDPjaEytJrfUXxBBTHK8bwPzsatvxpicJRPqhJPMU4NFYYvJszo1bEPogBONJ8FyRNw7i2Uk6LwPrI6K4ROTe2WrgnYbG80oM6x~FfsaIQEtz7uaMoOa-I1QaEZOBY47bYi7JjT6OesG4f3YW~3QLVjqk~VEqB13Gj8VkzNo~nIbdCC6cZY7VuCVt~7JUqmhoClTgHdVoz88wQ98e7Lc4WvlZzmzwQ__',
         'https://s3-alpha-sig.figma.com/img/b715/e80e/cd27bafb01ffb424d8802f899a95b2ad?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pQjOOOIlSo~sBQz9HMUxvG2temQaFcLjFtvsmpd8-XMwETIqA4Xf6p9NM-Q12d2lse~81xxNJ~PNALldwZoIPbBD686p3u3tr7bz3izvrkP3bTFQGa-6bhp99ziw0g5Od~Zwa0smOS2XUHasMoqh1TEcq1QEia1Z0DC~lJscPqtYWii67jVXM76A2mUeJS5g5VNHyEf5aAZy1oGU~TWI66wJrYHT~GiAKLDjx1UJOODDAAwALEz9AeQhnfmHBhMjxXRPQ54L2b6nNRHz0oGP2EWJmLGX~MItGVS8iYgk68DWh92tyCaPEvTdQMu-mYgPANq26~02uGlMisJtqvzk1A__',
         'https://s3-alpha-sig.figma.com/img/5edc/831e/0b3ab5df71c63fdc600c1a13a8962f51?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hZAr3AWew2oRvN~8vGXfBXxCtxZmIrW0r-cjpsVT1pTBQwne0CR5U-5vD2EwM30k8vd1~Oi1wLRX9GAIkdS9Pnns3t2PLfog3YDcq~mJS7Z9NMTi2j4r-blZtWpGY~nKZiLz0333L~NLZkrzQkTKG2yFd8CqdZU5bWdBXZnThICPWA0lfHlhTg8TGc00OSVxeUfdnFl~zfyEwR9K6Ar88O~ca0v1lH9UgfIsR1LedWb~FDGylsYSoC-c~HbIQf0L01FYXINtTXp7aGz8SktlCnaZg3LsC6uhiXw2GZCKHwdPJ1w~OVYWDrKWBpmti7ioW5G55e38mlSmspqQwmUWiQ__',
@@ -33,17 +38,52 @@ export default function VehicleDetails() {
         if (error) {
         }
     }, [arLang])
+    const [mainSwiper, setMainSwiper] = useState(null);
+    const [thumbSwiper, setThumbSwiper] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    // Handle when the main Swiper slide changes
+    useEffect(() => {
+        if (mainSwiper) {
+            mainSwiper.on('slideChange', () => {
+                const newIndex = mainSwiper.activeIndex;
+                setActiveIndex(newIndex);
+                thumbSwiper?.slideTo(newIndex);  // Sync the thumbnail swiper
+            });
+        }
+    }, [mainSwiper, thumbSwiper]);
+
+    // Handle when the thumbnail Swiper is clicked
+    useEffect(() => {
+        if (thumbSwiper) {
+            thumbSwiper.on('click', (swiper) => {
+                const newIndex = swiper.clickedIndex;
+                setActiveIndex(newIndex);
+                mainSwiper?.slideTo(newIndex);  // Sync the main swiper
+            });
+        }
+    }, [thumbSwiper, mainSwiper]);
     return <main>
         <section className='pt-32 relative'>
             <img src={right} className='absolute right-0 top-0 z-[-1]' alt="vector" />
             <img src={left} className='absolute left-0 bottom-0 z-[-1]' alt="vector" />
             <div className="container">
-                <div className="lg:grid lg:grid-cols-2 lg:gap-10">
+                <div className="lg:grid lg:grid-cols-1 gap-1">
                     <div className="my-5 p-0 lg:p-0">
                         <div className='h-[500px] bg-[#FFFFFF0F] rounded-xl py-5'>
-                            <Fade className='w-full h-full' duration={1200}>
-                                <img src={mainImg} className='w-full h-full rounded-xl object-contain' alt="chair" />
-                            </Fade>
+                            <Swiper
+                                className='h-full'
+                                slidesPerView={1}
+                                navigation={true}
+                                onSwiper={setMainSwiper}
+                                modules={[Navigation]}  // Removed Controller module
+                            >
+                                {images.map((img, i) => (
+                                    <SwiperSlide key={i}>
+                                            <img src={img} className='w-full h-full rounded-xl object-contain' alt="chair" />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                         </div>
                         <Swiper
                             slidesPerView={2}
@@ -62,16 +102,15 @@ export default function VehicleDetails() {
                                     spaceBetween: 15,
                                 },
                             }}
+                            onSwiper={setThumbSwiper}
                             className="mySwiper"
+                            modules={[Navigation]}  // Removed Controller module
                         >
                             {images.map((image, i) => (
-
                                 <SwiperSlide key={i}>
-                                    <Fade className='w-full' direction='up' delay={i * 200} triggerOnce>
-                                        <div onClick={() => setMainImg(image)} className={`mt-5 rounded-lg overflow-hidden cursor-pointer ${image === mainImg ? 'border-2 border-[#f00] ' : 'border-2 '}`}>
-                                            <img src={image} className='w-full  h-[150px]' />
-                                        </div>
-                                    </Fade>
+                                    <div className={`mt-5 rounded-lg overflow-hidden cursor-pointer ${i === activeIndex ? 'border-2 border-[#f00]' : 'border-2'}`}>
+                                        <img src={image} className='w-full h-[60px] object-cover' alt="thumbnail" />
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>

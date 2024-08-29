@@ -45,7 +45,8 @@
     "subscribe": "Subscribe",
     "payment_method": "Payment Method",
     "cash": "Cash",
-    "installment": "installment"
+    "installment": "installment",
+    "payment":"Choose From Our Payment methods"
   },
   "payment": {
     "arkan": "Arkan installments",
