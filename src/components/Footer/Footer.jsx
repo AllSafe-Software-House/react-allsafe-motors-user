@@ -101,9 +101,9 @@ export default function Footer({ prod = true }) {
                             </Link>
                         </li>
                     </ul>
-                    <ul className='items-center mx-auto flex justify-center'>
+                    <ul className='items-center mx-auto sm:flex justify-center'>
                         {links.map((link, i) =>
-                            <li key={i} className='mx-7'>
+                            <li key={i} className='mx-7 my-5'>
                                 <Link className="text-white font-semibold hover:text-[#FF0000] duration-[0.3s]" to={link.path}>{link.link}</Link>
                             </li>
                         )}

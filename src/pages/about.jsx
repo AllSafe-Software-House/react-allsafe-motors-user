@@ -72,7 +72,7 @@ export default function About() {
         <section className="py-16">
             <div className="container">
                 <div className="flex flex-wrap items-center">
-                    <div className="w-full lg:w-1/2">
+                    <div className="w-full my-5 lg:w-1/2">
                         <Fade>
                             <h3 className="font-bold text-[#f00] text-[20px] mb-4 lg:text-[33px]">{data?.data?.ourMission?.Title}</h3>
                             <p>{data?.data?.ourMission?.Description}</p>
@@ -80,7 +80,7 @@ export default function About() {
                             <p>{data?.data?.ourStory?.Description}</p>
                         </Fade>
                     </div>
-                    <div className="w-full hidden lg:block lg:ps-36 lg:w-1/2">
+                    <div className="w-full hidden my-5 lg:block lg:ps-36 lg:w-1/2">
                         <Fade direction="up">
                             <img src={planet} className="w-full float" alt="planet" />
                         </Fade>

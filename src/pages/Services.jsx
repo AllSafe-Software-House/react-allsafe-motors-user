@@ -30,7 +30,7 @@ export default function Services() {
             <div className="container">
                 <div className="flex flex-wrap items-center">
                     {data?.data?.Services?.map((serv) => 
-                    <div key={serv.ID} className="md:w-1/2 px-3 my-3">
+                    <div key={serv.ID} className="w-full md:w-1/2 px-3 my-3">
                         <Fade>
                             <CustomCard serv name={serv.Title} disc={serv.Description} image={serv.ImagePath} id={serv.ID} />
                         </Fade>
