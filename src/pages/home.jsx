@@ -17,17 +17,18 @@ export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0)
     dispatch(fetchHomeSlice())
+
   }, []);
   useEffect(() => {
     dispatch(fetchHomeSlice())
   }, [arLang])
   return <main>
     <HeroSection />
-    <ExploreSection />
-    <FairPriceSection />
-    <WhyChooseUsSection />
-    <AboutUsSection />
-    <ServicesSection />
-    <VehiclesSection />
+    <ExploreSection data={data?.data?.Brand}/>
+    <FairPriceSection data={data?.data?.About}/>
+    <WhyChooseUsSection data={data?.data?.Choose}/>
+    <AboutUsSection data={data?.data?.Explorer}/>
+    <ServicesSection data={data?.data?.Services}/>
+    <VehiclesSection data={data?.data?.Productes}/>
   </main>
 }

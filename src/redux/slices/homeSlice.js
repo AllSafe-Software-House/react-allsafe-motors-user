@@ -6,7 +6,7 @@ export const fetchHomeSlice = createAsyncThunk(
     'homeSlice/fetchHomeSlice',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axiosInstance.get('/endpoint');
+            const response = await axiosInstance.get('/v1/home');
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response ? error.response.data : error.message);

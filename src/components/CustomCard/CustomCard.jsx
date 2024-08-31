@@ -7,7 +7,7 @@ import { MdArrowOutward, MdOutlineSpeed } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import stars from '../../assets/images/stars.png'
 import MainButton from '../MainButton/MainButton'
-export default function CustomCard({ image, name, disc, price, gear, miles, fuel, date, serv = false }) {
+export default function CustomCard({ image, name, disc, price, gear, miles, fuel, date, serv = false, id }) {
     const { t } = useTranslation('global')
     return <>
         {serv ?
@@ -24,12 +24,12 @@ export default function CustomCard({ image, name, disc, price, gear, miles, fuel
                     <h4 className='font-medium text-[20px]'>{name}</h4>
                     <p className='text-[15px] py-2'>{disc}</p>
                 </div>
-                <Link to={'service-Details'}>
+                <Link to={`service-Details/${id}`}>
                     <MainButton text={t('custom-text.explore')} nav className={'bg-transparent rounded-md border border-[#414246] '} />
                 </Link>
             </div>
             : <div className='border-white border flex justify-between flex-col rounded-lg overflow-hidden'>
-                <Link to={'/vehicles/vehicle-details'} className='group'>
+                <Link to={`/vehicles/vehicle-details/${id}`} className='group'>
                     <div>
                         <img src={image} className='w-full' alt={name} />
                     </div>

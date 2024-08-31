@@ -3,9 +3,9 @@ import axiosInstance from "../../api/api";
 
 export const fetchServicesDetalisData = createAsyncThunk(
     'servicesDetailsSlice/fetchServicesDetalisData',
-    async (_, { rejectWithValue }) => {
+    async (id, { rejectWithValue }) => {
         try {
-            const response = await axiosInstance.get('/endpoint');
+            const response = await axiosInstance.get(`/v1/servicesDetails/${id}`);
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response ? error.response.data : error.message);

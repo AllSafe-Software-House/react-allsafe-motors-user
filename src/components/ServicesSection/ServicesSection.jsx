@@ -5,7 +5,7 @@ import { MdArrowOutward } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import svg from '../../assets/images/SVG.png'
 import lol from '../../assets/images/Group 773975265.png'
-export default function ServicesSection() {
+export default function ServicesSection({ data }) {
     const { t } = useTranslation('global');
     return <>
         <section className='py-16'>
@@ -21,39 +21,16 @@ export default function ServicesSection() {
                         </Link>
                     </Fade>
                 </div>
-                <div className="flex mt-10 flex-wrap justify-between items-center">
-                    <div className="w-full md:w-1/2 lg:w-1/4 px-3 my-3">
-                        <Fade>
-                            <img src={svg} className='mb-2' alt="logo" />
-                            <p className='font-medium py-2 text-[18px] md:text-[20px]'>SOC 2 compliant</p>
-                            <p className=''>Supaglue is SOC 2 Type I certified. Report is
-                                available upon request.</p>
-                        </Fade>
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-1/4 px-3 my-3">
-                        <Fade>
-                            <img src={svg} className='mb-2' alt="logo" />
-                            <p className='font-medium py-2 text-[18px] md:text-[20px]'>SOC 2 compliant</p>
-                            <p className=''>Supaglue is SOC 2 Type I certified. Report is
-                                available upon request.</p>
-                        </Fade>
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-1/4 px-3 my-3">
-                        <Fade>
-                            <img src={svg} className='mb-2' alt="logo" />
-                            <p className='font-medium py-2 text-[18px] md:text-[20px]'>SOC 2 compliant</p>
-                            <p className=''>Supaglue is SOC 2 Type I certified. Report is
-                                available upon request.</p>
-                        </Fade>
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-1/4 px-3 my-3">
-                        <Fade>
-                            <img src={svg} className='mb-2' alt="logo" />
-                            <p className='font-medium py-2 text-[18px] md:text-[20px]'>SOC 2 compliant</p>
-                            <p className=''>Supaglue is SOC 2 Type I certified. Report is
-                                available upon request.</p>
-                        </Fade>
-                    </div>
+                <div className="flex mt-10 flex-wrap  items-center">
+                    {data?.map((serv) =>
+                        <div key={serv.ID} className="w-full md:w-1/2 lg:w-1/4 px-3 my-3">
+                            <Fade>
+                                <img src={svg} className='mb-2' alt="logo" />
+                                <p className='font-medium py-2 text-[18px] md:text-[20px]'>{serv.Title}</p>
+                                <p className=''>{serv.Description}</p>
+                            </Fade>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>

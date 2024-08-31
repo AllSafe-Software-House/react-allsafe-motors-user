@@ -5,7 +5,7 @@ export const fetchAboutData = createAsyncThunk(
     'aboutSlice/fetchAboutData',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axiosInstance.get('/endpoint');
+            const response = await axiosInstance.get('/v1/aboutUs');
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response ? error.response.data : error.message);

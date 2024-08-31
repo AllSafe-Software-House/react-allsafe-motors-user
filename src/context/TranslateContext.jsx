@@ -1,3 +1,4 @@
+import i18next from "i18next"
 import { createContext, useState } from "react"
 import { useTranslation } from "react-i18next"
 
@@ -9,6 +10,9 @@ export default function TranslateProvider({ children }) {
         localStorage.setItem('lang', lang)
         setArLang(!arLang)
         i18n.changeLanguage(lang)
+        console.log(i18next.language);
+        
+        
     }
     return <TranslateContext.Provider value={{ handelChangeLang, arLang }}>
         {children}

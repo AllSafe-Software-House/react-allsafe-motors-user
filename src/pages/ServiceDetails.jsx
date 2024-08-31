@@ -3,44 +3,31 @@ import { Fade } from 'react-awesome-reveal'
 import { TranslateContext } from '../context/TranslateContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchServicesDetalisData } from '../redux/slices/serviceDetailsSlice';
+import { useParams } from 'react-router-dom';
 
 export default function ServiceDetails() {
+    let { id } = useParams()
     let { data, isLoading, error } = useSelector(({ servicesDetails }) => servicesDetails);
     let dispatch = useDispatch();
     const { arLang } = useContext(TranslateContext);
-    useEffect(()=>{
-        window.scrollTo(0,0)
-    },[])
     useEffect(() => {
-        dispatch(fetchServicesDetalisData('id'))
-      }, [arLang])
+        window.scrollTo(0, 0)
+        dispatch(fetchServicesDetalisData(id))
+    }, [])
+    useEffect(() => {
+        dispatch(fetchServicesDetalisData(id))
+    }, [arLang])
     return <main>
         <Fade>
             <section className='h-[40vh] flex items-center justify-center'>
-                <h1 className='font-medium text-[48px] md:text-[58px] lg:text-[68px]'>Service name</h1>
+                <h1 className='font-medium text-[48px] md:text-[58px] lg:text-[68px]'>{data?.data?.Title}</h1>
             </section>
             <section>
                 <div className="container">
-                    <article>
+                    <article className='mb-10'>
                         <div className='border-b py-5 border-[#A7A7A7]'>
-                            <p className='text-[25px] pb-4'>Lorem, ipsum.</p>
-                            <p>lputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.</p>
-                        </div>
-                        <div className='border-b py-5 border-[#A7A7A7]'>
-                            <p className='text-[25px] pb-4'>Lorem, ipsum.</p>
-                            <p>Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.</p>
-                        </div>
-                        <div className='border-b py-5 border-[#A7A7A7]'>
-                            <p className='text-[25px] pb-4'>Lorem, ipsum.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem purus justo, ultricies. Sollicitudin odio elementum urna placerat lacus, vulputate. Non malesuada viverra et ultrices cras. Tincidunt tempor, blandit augue ac feugiat. Praesent arcu tempus ullamcorper quisque in. Magna fermentum, lacus, fermentum arcu. Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.
-
-                                Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.
-
-                                Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.</p>
-                        </div>
-                        <div className='border-b py-5 border-[#A7A7A7]'>
-                            <p className='text-[25px] pb-4'>Lorem, ipsum.</p>
-                            <p>lputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra, in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu penatibus congue orci turpis. Enim diam id.</p>
+                            {/* <p className='text-[25px] pb-4'>Lorem, ipsum.</p> */}
+                            <p>{data?.data?.Description}</p>
                         </div>
                     </article>
                 </div>
