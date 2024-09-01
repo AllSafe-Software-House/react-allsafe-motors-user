@@ -6,6 +6,7 @@ import CustomCard from '../components/CustomCard/CustomCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { TranslateContext } from '../context/TranslateContext';
 import { fetchProductsData } from '../redux/slices/vehiclesSlice';
+import Loading from '../components/Loading/Loading';
 
 export default function Vehicles() {
     const { t } = useTranslation('global')
@@ -23,6 +24,7 @@ export default function Vehicles() {
         dispatch(fetchProductsData('search'))
     }, [arLang])
     return <main>
+        {isLoading? <Loading/> : <>
         <HeadBanner text={data?.data?.heroSection?.Title} bg={data?.data?.heroSection?.Image} disc={data?.data?.heroSection?.Description} />
         <section className='py-20'>
             <div className="container">
@@ -64,5 +66,6 @@ export default function Vehicles() {
                 </div>
             </div>
         </section>
+        </>}
     </main>
 }

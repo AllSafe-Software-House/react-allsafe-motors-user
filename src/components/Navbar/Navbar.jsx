@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CiSearch } from 'react-icons/ci';
 import { HiBars3BottomLeft } from "react-icons/hi2";
 import { Link, NavLink } from 'react-router-dom';
-import SideBar from '../SideBar/SideBar.jsx';
+import logo from '../../assets/images/All Safe Motors png.png';
 import { menuContext } from '../../context/SideMenuContext';
 import { TranslateContext } from '../../context/TranslateContext';
-import { CiSearch } from 'react-icons/ci';
+import SideBar from '../SideBar/SideBar.jsx';
 function Navbar() {
     const { t } = useTranslation("global");
     const { handelChangeLang, arLang } = useContext(TranslateContext);
@@ -26,7 +27,7 @@ function Navbar() {
                     <div className="flex items-center justify-between">
                         <div className="logo">
                             <Link to={'/'}>
-                                <img src="https://s3-alpha-sig.figma.com/img/c9dd/63b5/15ab00969e33794e08e612177e09d4bf?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UGKJtJl7p-8JBpkncoWxiC-vtDWCEI0DLOGP81BfaRmCbsFu2yKA1L0rCeWcMJnSaQmkrl1J~m6zTXZ7UytT3-JtyghTw2XmVFyGEhx3kWzUXlwge55zI3UgcQOgHdH5vYZQt3Annooi9B2-oSSXf8eJ8FlR3UkuxLuH0DrPGLklD-F2h3WxuogzJ-y2SRXJ-BjTDnu9Obk1mkJ5k8pSdeCtO6poA7WusCYk8~QutSiHc90heTiluu6bSdWFZZtS7ckyeLqcf1ON~ej9asiFZ5K4iXRIRcS-AViehkgBENG5x3kj5h9vAE1iKSnW4F~qAYqUGyCpGcge2LoJ7a9wXQ__" className='w-[100px]' alt="AL-Baqari Motors" />
+                                <img src={logo} className='w-[100px]' alt="All safe motors" />
                             </Link>
                         </div>
                         <ul className='items-center hidden lg:flex'>

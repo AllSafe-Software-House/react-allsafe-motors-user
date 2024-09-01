@@ -19,15 +19,15 @@
     "exportV": "Explore All Vehicles",
     "explore": "Explore",
     "continue": "Continue",
-    "contact":"Get In Touch",
+    "contact": "Get In Touch",
     "discover": "Discover our office locations",
-     "direction": "Get Direction",
-     "aboutText":"What is All Safe Motors and how valid is it?",
-     "buy":"Buy Products",
-     "overview":"Our Company Overview",
-     "faq":"Frequently asked questions",
-     "ourMission":"Our mission",
-     "ourStory":"Our story"
+    "direction": "Get Direction",
+    "aboutText": "What is All Safe Motors and how valid is it?",
+    "buy": "Buy Products",
+    "overview": "Our Company Overview",
+    "faq": "Frequently asked questions",
+    "ourMission": "Our mission",
+    "ourStory": "Our story"
   },
   "placeholders": {
     "first_name": "First Name",
@@ -46,7 +46,7 @@
     "payment_method": "Payment Method",
     "cash": "Cash",
     "installment": "installment",
-    "payment":"Choose From Our Payment methods"
+    "payment": "Choose From Our Payment methods"
   },
   "payment": {
     "allSafe": "All Safe Motors installments",
@@ -55,5 +55,10 @@
     "naturalText": "This installment plan is the well-known system where you pay 20% upfront, and the remaining balance is paid in installments. This system is quite popular and offers a manageable way to make large purchases without straining your budget.",
     "cash": "Cash",
     "cashText": "You can fully pay the total amount in cash, which is priced at $600.72. This is an excellent investment, and we’re confident you’ll be very satisfied with the value and quality you’re receiving. If you have any questions or need further assistance, we're here to help make the process as smooth as possible for you."
+  },
+  "errors": {
+    "required": "required",
+    "email": "Invalid email format",
+    "phone": "Phone number must be 11 digits"
   }
 }

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import MainButton from '../components/MainButton/MainButton'
 import left from '../assets/images/VectorL.png'
 import right from '../assets/images/VectorR.png'
+import Loading from '../components/Loading/Loading'
 export default function VehicleForm() {
     const { t } = useTranslation('global')
     const [selectedOption, setSelectedOption] = useState('option1')
@@ -15,6 +16,7 @@ export default function VehicleForm() {
         window.scrollTo(0, 0)
     }, [])
     return <main>
+        {isLoading? <Loading/> : <>
         <section className='pb-28 pt-56 relative'>
             <img src={right} className='absolute right-0 top-0 z-[-1]' alt="vector" />
             <img src={left} className='absolute left-0 bottom-0 z-[-1]' alt="vector" />
@@ -123,5 +125,7 @@ export default function VehicleForm() {
                 </div>
             </div>
         </section>
+        
+        </>}
     </main>
 }

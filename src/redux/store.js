@@ -6,6 +6,7 @@ import { serviceDetailsReducer } from './slices/serviceDetailsSlice'
 import { productReducer } from './slices/vehiclesSlice'
 import { productDetailsReducer } from './slices/vehicleDetailsSlice'
 import { contactUsReducer } from './slices/contactSlice'
+import { contactUsFormReducer } from './slices/contactFormSlice'
 
 export const store = configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
     productsData:productReducer,
     productDetails:productDetailsReducer,
     contactData:contactUsReducer,
+    postContact:contactUsFormReducer,
   },
 })

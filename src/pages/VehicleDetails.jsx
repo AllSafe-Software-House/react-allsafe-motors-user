@@ -17,6 +17,7 @@ import right from '../assets/images/VectorR.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { TranslateContext } from '../context/TranslateContext';
 import { fetchProductDetalisData } from '../redux/slices/vehicleDetailsSlice';
+import Loading from '../components/Loading/Loading';
 
 export default function VehicleDetails() {
     const { t } = useTranslation('global')
@@ -64,6 +65,7 @@ export default function VehicleDetails() {
         }
     }, [thumbSwiper, mainSwiper]);
     return <main>
+        {isLoading? <Loading/> : <> 
         <section className='pt-32 relative'>
             <img src={right} className='absolute right-0 top-0 z-[-1]' alt="vector" />
             <img src={left} className='absolute left-0 bottom-0 z-[-1]' alt="vector" />
@@ -211,5 +213,6 @@ export default function VehicleDetails() {
                 </div>
             </div>
         </section>
+        </>}
     </main>
 }

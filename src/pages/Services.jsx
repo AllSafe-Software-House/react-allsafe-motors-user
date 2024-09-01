@@ -6,6 +6,7 @@ import { Fade } from 'react-awesome-reveal'
 import { useDispatch, useSelector } from 'react-redux'
 import { TranslateContext } from '../context/TranslateContext'
 import { fetchServicesData } from '../redux/slices/servicesSlice'
+import Loading from '../components/Loading/Loading'
 
 export default function Services() {
     const { t } = useTranslation('global')
@@ -25,19 +26,21 @@ export default function Services() {
         }
     }, [arLang])
     return <main>
-        <HeadBanner text={data?.data?.heroSection?.Title} bg={data?.data?.heroSection?.Image} disc={data?.data?.heroSection?.Description} />
-        <section className='py-20'>
-            <div className="container">
-                <div className="flex flex-wrap items-center">
-                    {data?.data?.Services?.map((serv) => 
-                    <div key={serv.ID} className="w-full md:w-1/2 px-3 my-3">
-                        <Fade>
-                            <CustomCard serv name={serv.Title} disc={serv.Description} image={serv.ImagePath} id={serv.ID} />
-                        </Fade>
+        {isLoading ? <Loading /> : <>
+            <HeadBanner text={data?.data?.heroSection?.Title} bg={data?.data?.heroSection?.Image} disc={data?.data?.heroSection?.Description} />
+            <section className='py-20'>
+                <div className="container">
+                    <div className="flex flex-wrap items-center">
+                        {data?.data?.Services?.map((serv) =>
+                            <div key={serv.ID} className="w-full md:w-1/2 px-3 my-3">
+                                <Fade>
+                                    <CustomCard serv name={serv.Title} disc={serv.Description} image={serv.ImagePath} id={serv.ID} />
+                                </Fade>
+                            </div>
+                        )}
                     </div>
-                    )}
                 </div>
-            </div>
-        </section>
+            </section>
+        </>}
     </main>
 }

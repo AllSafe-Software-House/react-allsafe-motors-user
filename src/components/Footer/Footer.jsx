@@ -32,7 +32,7 @@ export default function Footer({ prod = true }) {
                         <h4 className='font-bold text-[20px] py-3 lg:text-[30px]'>$165,000</h4>
                         <h2 className='font-bold py-3 text-[30px] md:text-[40px] lg:text-[52px]'>Ranger Black –
                             2021</h2>
-                        <Link to={'contact-us'}>
+                        <Link className='inline-block' to={'contact-us'}>
                             <MainButton nav className={"rounded-lg mt-4 py-3"} text={t('navlinks.contact_us')} />
                         </Link>
                     </div>

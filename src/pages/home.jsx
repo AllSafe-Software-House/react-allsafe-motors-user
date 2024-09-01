@@ -9,6 +9,7 @@ import WhyChooseUsSection from "../components/WhyChooseUsSection/WhyChooseUsSect
 import { useDispatch, useSelector } from "react-redux";
 import { TranslateContext } from "../context/TranslateContext";
 import { fetchHomeSlice } from "../redux/slices/homeSlice";
+import Loading from "../components/Loading/Loading";
 
 export default function Home() {
   let { data, isLoading, error } = useSelector(({ homeData }) => homeData);
@@ -23,6 +24,9 @@ export default function Home() {
     dispatch(fetchHomeSlice())
   }, [arLang])
   return <main>
+    {isLoading? <Loading /> : 
+    <>
+    <Loading />
     <HeroSection />
     <ExploreSection data={data?.data?.Brand}/>
     <FairPriceSection data={data?.data?.About}/>
@@ -30,5 +34,7 @@ export default function Home() {
     <AboutUsSection data={data?.data?.Explorer}/>
     <ServicesSection data={data?.data?.Services}/>
     <VehiclesSection data={data?.data?.Productes}/>
+    </>
+    }
   </main>
 }

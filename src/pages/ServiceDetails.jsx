@@ -4,6 +4,7 @@ import { TranslateContext } from '../context/TranslateContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchServicesDetalisData } from '../redux/slices/serviceDetailsSlice';
 import { useParams } from 'react-router-dom';
+import Loading from '../components/Loading/Loading';
 
 export default function ServiceDetails() {
     let { id } = useParams()
@@ -18,6 +19,7 @@ export default function ServiceDetails() {
         dispatch(fetchServicesDetalisData(id))
     }, [arLang])
     return <main>
+        {isLoading? <Loading /> : <> 
         <Fade>
             <section className='h-[40vh] flex items-center justify-center'>
                 <h1 className='font-medium text-[48px] md:text-[58px] lg:text-[68px]'>{data?.data?.Title}</h1>
@@ -33,5 +35,6 @@ export default function ServiceDetails() {
                 </div>
             </section>
         </Fade>
+        </>}
     </main>
 }

@@ -6,6 +6,7 @@ import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TranslateContext } from "../context/TranslateContext";
 import { fetchAboutData } from "../redux/slices/aboutSlice";
+import Loading from "../components/Loading/Loading";
 export default function About() {
     let { data, isLoading, error } = useSelector(({ aboutData }) => aboutData);
     const { arLang } = useContext(TranslateContext);
@@ -22,6 +23,8 @@ export default function About() {
         }
     }, [arLang])
     return <>
+     {isLoading? <Loading /> : <>
+     
         <HeadBanner text={data?.data?.heroSection?.Title} about disc={data?.data?.heroSection?.Description} bg={data?.data?.heroSection?.Image} />
         <section className="py-16">
             <div className="container">
@@ -88,5 +91,6 @@ export default function About() {
                 </div>
             </div>
         </section>
+     </>}
     </>
 }
