@@ -7,7 +7,8 @@ import { MdArrowOutward, MdOutlineSpeed } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import stars from '../../assets/images/stars.png'
 import MainButton from '../MainButton/MainButton'
-export default function CustomCard({ image, name, disc, price, gear, miles, fuel, date, serv = false, id }) {
+export default function CustomCard({ image, name, disc, price, gear, miles, fuel, date, serv = false, id, attrs }) {
+    console.log(attrs);
     const { t } = useTranslation('global')
     return <>
         {serv ?
@@ -37,30 +38,20 @@ export default function CustomCard({ image, name, disc, price, gear, miles, fuel
                         <h4 className='font-medium text-[20px]'>{name}</h4>
                         <p className='text-[15px] py-2'>{disc}</p>
                         <div className='flex items-center flex-wrap'>
-                            <div className="w-1/2 my-2">
-                                <div className='flex items-center'>
-                                    <BsFuelPump className='text-[25px] me-2' />
-                                    {fuel}
-                                </div>
-                            </div>
-                            <div className="w-1/2 my-2">
-                                <div className='flex items-center'>
-                                    <GiGearStickPattern className='text-[25px] me-2' />
-                                    {gear}
-                                </div>
-                            </div>
-                            <div className="w-1/2 my-2">
-                                <div className='flex items-center'>
-                                    <CiCalendarDate className='text-[25px] me-2' />
-                                    {date}
-                                </div>
-                            </div>
-                            <div className="w-1/2 my-2">
-                                <div className='flex items-center'>
-                                    <MdOutlineSpeed className='text-[25px] me-2' />
-                                    {miles}
-                                </div>
-                            </div>
+                            {attrs?.map((attr, i) => (
+                                attr.Key !== 'colors' && (
+                                    <div key={i} className="w-1/2 my-2">
+                                        <div className='flex items-center'>
+                                            {attr.Key === 'fuel' ? <BsFuelPump className='text-[25px] me-2' />
+                                                : attr.Key === 'Speed' ? <MdOutlineSpeed className='text-[25px] me-2' />
+                                                    : attr.Key === 'transmission' ? <GiGearStickPattern className='text-[25px] me-2' />
+                                                        : attr.Key === 'year' ? <CiCalendarDate className='text-[25px] me-2' />
+                                                            : null}
+                                            {attr.Value}
+                                        </div>
+                                    </div>
+                                )
+                            ))}
                         </div>
                         <div className='mt-2 flex items-center justify-between pt-5 border-t border-white'>
                             <h4 className='text-base font-bold'>{price}</h4>

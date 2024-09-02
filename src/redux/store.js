@@ -7,6 +7,9 @@ import { productReducer } from './slices/vehiclesSlice'
 import { productDetailsReducer } from './slices/vehicleDetailsSlice'
 import { contactUsReducer } from './slices/contactSlice'
 import { contactUsFormReducer } from './slices/contactFormSlice'
+import { footerReducer } from './slices/footerSlice'
+import { buyCarReducer } from './slices/vehicleFormSlice'
+import { paymentReducer } from './slices/paymentTypesSlice'
 
 export const store = configureStore({
   reducer: {
@@ -18,5 +21,8 @@ export const store = configureStore({
     productDetails:productDetailsReducer,
     contactData:contactUsReducer,
     postContact:contactUsFormReducer,
+    footerData:footerReducer,
+    buyCar:buyCarReducer,
+    paymentType:paymentReducer
   },
 })

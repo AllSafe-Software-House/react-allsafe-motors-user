@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "./node_modules/flowbite/**/*.js"],
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
       'main': ["DM Sans", 'sans-serif'],
@@ -8,8 +8,6 @@ export default {
     extend: {
 
     },
-    plugins: [
-      require('@tailwindcss/typography'),
-    ]
   },
+  plugins: [require('daisyui')],
 };

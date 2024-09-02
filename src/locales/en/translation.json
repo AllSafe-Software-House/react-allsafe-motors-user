@@ -27,7 +27,10 @@
     "overview": "Our Company Overview",
     "faq": "Frequently asked questions",
     "ourMission": "Our mission",
-    "ourStory": "Our story"
+    "ourStory": "Our story",
+    "colors":"Colors",
+    "formTitle":"Let’s connect constellations",
+    "formText":"Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies."
   },
   "placeholders": {
     "first_name": "First Name",

@@ -5,7 +5,6 @@ import App from "./App.jsx";
 import "./i18n";
 import "./index.css";
 import 'swiper/css';
-import 'flowbite/dist/flowbite.min.js'
 // import 'react-medium-image-zoom/dist/styles.css'
 import { Provider } from 'react-redux'
 import { store } from "./redux/store.js";

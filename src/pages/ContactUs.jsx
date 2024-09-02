@@ -81,8 +81,8 @@ export default function ContactUs() {
                 <div className="container">
                     <div className="flex bg-[#FFFFFF0F] mt-10 md:p-6 rounded-2xl flex-wrap">
                         <div className='w-full px-4 my-4'>
-                            <h3 className='font-semibold text-[20px] md:text-[30px]'>Let’s connect constellations</h3>
-                            <p>Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies.</p>
+                            <h3 className='font-semibold text-[20px] md:text-[30px]'>{t('custom-text.formTitle')}</h3>
+                            <p>{t('custom-text.formText')}</p>
                             <div>
                                 <form onSubmit={formik.handleSubmit} id='contact' className='mt-10'>
                                     <Fade delay={400}>

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TranslateContext } from "../context/TranslateContext";
 import { fetchHomeSlice } from "../redux/slices/homeSlice";
 import Loading from "../components/Loading/Loading";
+import { fetchContactUsData } from "../redux/slices/contactSlice";
 
 export default function Home() {
   let { data, isLoading, error } = useSelector(({ homeData }) => homeData);
@@ -18,7 +19,6 @@ export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0)
     dispatch(fetchHomeSlice())
-
   }, []);
   useEffect(() => {
     dispatch(fetchHomeSlice())
@@ -26,7 +26,6 @@ export default function Home() {
   return <main>
     {isLoading? <Loading /> : 
     <>
-    <Loading />
     <HeroSection />
     <ExploreSection data={data?.data?.Brand}/>
     <FairPriceSection data={data?.data?.About}/>

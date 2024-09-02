@@ -25,7 +25,7 @@ export default function VehiclesSection({ data }) {
                 <div className="flex flex-wrap mt-3 items-center">
                     {data?.map((car =>
                         <div key={car.ID} className="w-full px-2 my-3 md:w-1/2 lg:w-1/4">
-                            <CustomCard id={car.ID} name={car.Title} disc={car.Description} miles={"20 Miles"} gear={'Automatic'} date={'2023'} fuel={'Petrol'} price={car.Price} image={car.Image} />
+                            <CustomCard id={car.ID} name={car.Title} disc={car.Description} attrs={car?.Attributes} price={car.Price} image={car.Images[0]} />
                         </div>
                     ))}
 
