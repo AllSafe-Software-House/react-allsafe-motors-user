@@ -7,8 +7,7 @@ import { MdArrowOutward, MdOutlineSpeed } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import stars from '../../assets/images/stars.png'
 import MainButton from '../MainButton/MainButton'
-export default function CustomCard({ image, name, disc, price, gear, miles, fuel, date, serv = false, id, attrs }) {
-    console.log(attrs);
+export default function CustomCard({ image, name, disc, price, serv = false, id, attrs, brand }) {
     const { t } = useTranslation('global')
     return <>
         {serv ?
@@ -35,6 +34,7 @@ export default function CustomCard({ image, name, disc, price, gear, miles, fuel
                         <img src={image} className='w-full' alt={name} />
                     </div>
                     <div className='p-5'>
+                        <p className='text-[14px]'>{brand}</p>
                         <h4 className='font-medium text-[20px]'>{name}</h4>
                         <p className='text-[15px] py-2'>{disc}</p>
                         <div className='flex items-center flex-wrap'>

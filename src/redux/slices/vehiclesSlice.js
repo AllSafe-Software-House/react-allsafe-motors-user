@@ -3,9 +3,9 @@ import axiosInstance from "../../api/api";
 
 export const fetchProductsData = createAsyncThunk(
     'productSlice/fetchProductsData',
-    async (_, { rejectWithValue }) => {
+    async (filters, { rejectWithValue }) => {
         try {
-            const response = await axiosInstance.get('/v1/productes');
+            const response = await axiosInstance.get(`/v1/productes?filter[price]=${filters.price}&filter[model_number]=${filters.model}&filter[brand]=${filters.brand}`);
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response ? error.response.data : error.message);

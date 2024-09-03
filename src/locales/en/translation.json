@@ -42,14 +42,16 @@
     "yes": "Yes",
     "no": "No",
     "message": "Message",
-    "search": "Search",
+    "search": "Search by brand",
     "filter": "Filter",
     "submit": "Send it to allSafe",
     "subscribe": "Subscribe",
     "payment_method": "Payment Method",
     "cash": "Cash",
     "installment": "installment",
-    "payment": "Choose From Our Payment methods"
+    "payment": "Choose From Our Payment methods",
+    "model":"Model Number",
+    "priceRange":"Price Range"
   },
   "payment": {
     "allSafe": "All Safe Motors installments",
