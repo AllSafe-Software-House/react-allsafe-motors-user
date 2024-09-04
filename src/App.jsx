@@ -10,8 +10,6 @@ import Footer from "./components/Footer/Footer";
 import { useLocation } from "react-router-dom";
 function App() {
   const { i18n } = useTranslation();
-  // const storedLanguage = JSON.parse(localStorage.getItem("lang")) || "en";
-  // const currentLanguage = i18n.language;
   const location = useLocation()
   const  isLocation = location.pathname.includes('contact-us')
   const lang = localStorage.getItem('lang')

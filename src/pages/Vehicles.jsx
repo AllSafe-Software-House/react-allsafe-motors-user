@@ -26,13 +26,15 @@ export default function Vehicles() {
         price: '',
         model: '',
     });
-    const handlePriceChange =() =>{
-        setFilters(prevFilters => ({
-            ...prevFilters,
+    const handlePriceChange = () => {
+        const updatedFilters = {
+            ...filters,
             price: `${min},${max}`,
-        }));        
-        dispatch(fetchProductsData(filters))
-    }
+        };
+        setFilters(updatedFilters);
+        console.log(updatedFilters);
+        dispatch(fetchProductsData(updatedFilters));
+    };
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(fetchProductsData(filters))
@@ -87,14 +89,14 @@ export default function Vehicles() {
                                 <div>
                                     <label className='pb-3' htmlFor="">{t('placeholders.priceRange')}
                                     </label>
-                                    <MultiRangeSlider setMin={setMin} setMax={setMax}  min={0} max={60000} />
+                                    <MultiRangeSlider setMin={setMin} setMax={setMax} min={0} max={60000} />
                                     <button onClick={handlePriceChange} className="btn btn-sm bg-black text-white">Done</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <TagsInput className='w-full tagInput my-3 bg-transparent border-gray-500 border py-2 px-4 outline-none rounded-lg' value={keywords} onChange={handleChange} />
+                        <TagsInput  inputProps={{ placeholder: t('placeholders.search') }} className='w-full tagInput my-3 bg-transparent border-gray-500 border py-2 px-4 outline-none rounded-lg' value={keywords} onChange={handleChange} />
                     </div>
                     <div className="mt-4">
                         <div className="flex flex-wrap mt-3 ">

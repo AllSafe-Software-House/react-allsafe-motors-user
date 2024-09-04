@@ -38,8 +38,9 @@ export default function Footer({ prod = true }) {
     return <div>
         {prod ? <section className='' style={{
             backgroundImage: `
-                            url('${footerData?.data?.lastsection[0]?.Images[0]}')
-                        `,
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('${footerData?.data?.lastsection[0]?.Images[0]}')
+            `,
             backgroundSize: 'cover',
             backgroundPosition: '50% 50%',
         }}>
@@ -56,15 +57,15 @@ export default function Footer({ prod = true }) {
                         <div className='bg-[#00000069] rounded-xl p-8'>
                             <div className='flex items-center flex-wrap'>
                                 {footerData?.data?.lastsection[0]?.Attributes?.map((attr, i) =>
-                                    attr.Key !== 'colors' && (
+                                    (attr.Key !== 'colors' && attr.Key !== 'اللون') && (
                                         <div key={i} className="w-1/2 my-2">
                                             <div className='flex items-center'>
-                                                {attr.Key === 'fuel' ? <BsFuelPump className='text-[40px] mb-2 mx-auto md:mx-0' />
-                                                    : attr.Key === 'Speed' ? <MdOutlineSpeed className='text-[40px] mb-2 mx-auto md:mx-0' />
-                                                        : attr.Key === 'transmission' ? <GiGearStickPattern className='text-[40px] mb-2 mx-auto md:mx-0' />
-                                                            : attr.Key === 'year' ? <CiCalendarDate className='text-[40px] mb-2 mx-auto md:mx-0' />
+                                                {attr.Key === 'fuel' || attr.Key === 'الوقود' ? <BsFuelPump className='text-[25px] me-2' />
+                                                    : attr.Key === 'Speed' || attr.Key === 'السرعه' ? <MdOutlineSpeed className='text-[25px] me-2' />
+                                                        : attr.Key === 'transmission' || attr.Key === 'التحكم' ? <GiGearStickPattern className='text-[25px] me-2' />
+                                                            : attr.Key === 'year' || attr.Key === 'السنه' ? <CiCalendarDate className='text-[25px] me-2' />
                                                                 : null}
-                                                <p className='font-medium'>{attr.Value}</p>
+                                                {attr.Value}
                                             </div>
                                         </div>
                                     )

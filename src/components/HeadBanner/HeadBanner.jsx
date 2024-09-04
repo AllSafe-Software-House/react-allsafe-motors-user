@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import light from '../../assets/images/Light.png'
 import { Fade } from 'react-awesome-reveal';
 import middle from '../../assets/images/Vector.png'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { TranslateContext } from '../../context/TranslateContext';
 export default function HeadBanner({ text, disc, bg, about = false }) {
     const { t } = useTranslation('global')
+    const { arLang } = useContext(TranslateContext);
     return (
         <>
             <Fade>
@@ -21,7 +23,7 @@ export default function HeadBanner({ text, disc, bg, about = false }) {
                 >
                     <img src={middle} className='absolute  top-1/2 -translate-y-1/2 right-0' alt="light" />
                     <div className="container ">
-                        <div className='py-3 relative before:absolute before:left-[-20px] before:top-0 before:h-full before:w-1 before:rounded-full before:bg-[#f00]'>
+                        <div className={`py-3 relative before:absolute ${arLang? 'before:right-[-20px]':'before:left-[-20px]'}  before:top-0 before:h-full before:w-1 before:rounded-full before:bg-[#f00]`}>
                             <Fade delay={200}>
                                 <h1 className='text-[28px] font-bold md:text-[38px] ms-10 lg:text-[48px]'>{text}</h1>
                             </Fade>

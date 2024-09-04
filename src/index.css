@@ -384,3 +384,6 @@ body {
   display: flex;
   align-items: center;
 }
+.react-tagsinput-input{
+  flex: 1;
+}
