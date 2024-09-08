@@ -77,8 +77,8 @@ export default function VehicleForm() {
                                 <div className='lg:w-1/2 px-2'>
                                     <Fade className='w-full h-full' duration={1200}>
                                         <img
-                                            src='https://s3-alpha-sig.figma.com/img/5e04/709e/6424eb18f47268bd197a88c3bc96dff5?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UQWyaX3~FEgarfsuc5-~sMs2AFORFVmTvHQ6zyscLzqp6fbd7fsPEWVb-p-1c-Fah3l4x-L3za4uKznRgVDtMt0YxSpBgJwVnvaJIlopELQ90t5qd2-Kt-7UzDPjaEytJrfUXxBBTHK8bwPzsatvxpicJRPqhJPMU4NFYYvJszo1bEPogBONJ8FyRNw7i2Uk6LwPrI6K4ROTe2WrgnYbG80oM6x~FfsaIQEtz7uaMoOa-I1QaEZOBY47bYi7JjT6OesG4f3YW~3QLVjqk~VEqB13Gj8VkzNo~nIbdCC6cZY7VuCVt~7JUqmhoClTgHdVoz88wQ98e7Lc4WvlZzmzwQ__'
-                                            className='w-full h-full rounded-xl'
+                                            src='https://i.redd.it/b1so8plcfto61.jpg'
+                                            className='w-full object-cover h-full rounded-xl'
                                             alt="chair"
                                         />
                                     </Fade>
