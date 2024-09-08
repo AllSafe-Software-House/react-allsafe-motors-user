@@ -12,22 +12,22 @@ export const postBuyCarData = createAsyncThunk(
         }
     }
 )
-let initialState = { message: {}, isLoading: false, error: null };
+let initialState = { message: {}, loading: false, error: null };
 let buyCarSlice = createSlice({
     name: 'buyCarSlice',
     initialState,
     extraReducers: (builder) => {
         builder
             .addCase(postBuyCarData.pending, (state) => {
-                state.isLoading = true;
+                state.loading = true;
                 state.error = null; // Clear any previous errorS
             })
             .addCase(postBuyCarData.fulfilled, (state, action) => {
                 state.message = action.payload;
-                state.isLoading = false;
+                state.loading = false;
             })
             .addCase(postBuyCarData.rejected, (state, action) => {
-                state.isLoading = false;
+                state.loading = false;
                 state.error = action.payload || 'Failed to fetch home data';
             });
     }

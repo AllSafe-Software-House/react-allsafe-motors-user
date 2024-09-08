@@ -16,7 +16,7 @@ import toast, { Toaster } from 'react-hot-toast';
 export default function VehicleForm() {
     const { t } = useTranslation('global');
     const [selectedOption, setSelectedOption] = useState(null);
-    const { message } = useSelector(({ buyCar }) => buyCar);
+    const { message, loading } = useSelector(({ buyCar }) => buyCar);
     const { data, error, isLoading } = useSelector(({ paymentType }) => paymentType);
     const dispatch = useDispatch();
     const { id } = useParams();
@@ -65,7 +65,7 @@ export default function VehicleForm() {
     return (
         <main>
             <Toaster />
-            {isLoading ? (
+            {isLoading || loading ? (
                 <Loading />
             ) : (
                 <>
