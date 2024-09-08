@@ -12,6 +12,7 @@ import { FaFilter } from "react-icons/fa";
 import MultiRangeSlider from '../components/Multiselect/MultiRangeSlider';
 import 'react-tagsinput/react-tagsinput.css'; // Optional: import the default styles
 import TagsInput from 'react-tagsinput';
+import toast, { Toaster } from 'react-hot-toast';
 export default function Vehicles() {
     const { t } = useTranslation('global')
     const [keywords, setKeywords] = useState([]);
@@ -38,6 +39,9 @@ export default function Vehicles() {
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(fetchProductsData(filters))
+        if (error) {
+            toast.error(error);
+        }
     }, [])
     const handleChange = (tags) => {
         setKeywords(tags);
@@ -48,20 +52,30 @@ export default function Vehicles() {
     };
     useEffect(() => {
         dispatch(fetchProductsData(filters))
+        if (error) {
+            toast.error(error);
+        }
     }, [arLang])
     useEffect(() => {
         console.log(filters);
-        dispatch(fetchProductsData(filters)); // Trigger search based on filters
+        dispatch(fetchProductsData(filters));
+        if (error) {
+            toast.error(error);
+        } // Trigger search based on filters
     }, [filters.brand])
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             console.log(filters);
             dispatch(fetchProductsData(filters)) // Trigger search based on filters
-        }, 1000); // Wait 2000ms after the user stops typing
+        }, 1000);
+        if (error) {
+            toast.error(error);
+        } // Wait 2000ms after the user stops typing
 
         return () => clearTimeout(timeoutId); // Cleanup the timeout
     }, [filters.model])
     return <main>
+        <Toaster />
         {isLoading ? <Loading /> : <>
             <HeadBanner text={data?.data?.heroSection?.Title} bg={data?.data?.heroSection?.Image} disc={data?.data?.heroSection?.Description} />
             <section className='py-20'>

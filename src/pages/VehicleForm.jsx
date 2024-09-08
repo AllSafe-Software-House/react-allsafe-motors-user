@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 import { fetchPaymentData } from '../redux/slices/paymentTypesSlice';
 import { postBuyCarData } from '../redux/slices/vehicleFormSlice';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function VehicleForm() {
     const { t } = useTranslation('global');
@@ -56,10 +57,14 @@ export default function VehicleForm() {
     useEffect(() => {
         window.scrollTo(0, 0);
         dispatch(fetchPaymentData());
+        if (error) {
+            toast.error(error);
+        }
     }, [dispatch]);
 
     return (
         <main>
+            <Toaster />
             {isLoading ? (
                 <Loading />
             ) : (

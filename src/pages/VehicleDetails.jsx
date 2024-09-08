@@ -18,6 +18,7 @@ import Loading from '../components/Loading/Loading';
 import MainButton from '../components/MainButton/MainButton';
 import { TranslateContext } from '../context/TranslateContext';
 import { fetchProductDetalisData } from '../redux/slices/vehicleDetailsSlice';
+import toast, { Toaster } from 'react-hot-toast';
 export default function VehicleDetails() {
     const { t } = useTranslation('global')
     const { id } = useParams()
@@ -27,11 +28,15 @@ export default function VehicleDetails() {
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(fetchProductDetalisData(id))
+        if (error) {
+            toast.error(error);
+        }
     }, [])
     console.log(data?.data);
     useEffect(() => {
         dispatch(fetchProductDetalisData(id))
         if (error) {
+            toast.error(error);
         }
     }, [arLang])
     const [mainSwiper, setMainSwiper] = useState(null);
@@ -60,6 +65,7 @@ export default function VehicleDetails() {
         }
     }, [thumbSwiper, mainSwiper]);
     return <main>
+        <Toaster />
         {isLoading ? <Loading /> : <>
             <section className='pt-32 relative'>
                 <img src={right} className='absolute right-0 top-0 z-[1]' alt="vector" />

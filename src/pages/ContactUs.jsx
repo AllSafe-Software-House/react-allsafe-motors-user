@@ -16,6 +16,7 @@ import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import { postContactUsFormData } from '../redux/slices/contactFormSlice'
 import Loading from '../components/Loading/Loading'
+import toast, { Toaster } from 'react-hot-toast'
 export default function ContactUs() {
     const { t } = useTranslation('global')
     let { data, isLoading, error } = useSelector(({ contactData }) => contactData);
@@ -43,15 +44,20 @@ export default function ContactUs() {
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(fetchContactUsData())
+        if (error) {
+            toast.error(error);
+        }
     }, [])
     console.log(message?.message);
     console.log(data?.data);
     useEffect(() => {
         dispatch(fetchContactUsData())
         if (error) {
+            toast.error(error);
         }
     }, [arLang])
     return <main>
+        <Toaster position="top-right" />
         {isLoading ? <Loading /> : <>
             <section className='pt-32 relative pb-16 overflow-hidden'>
                 <img src={right} className='absolute right-0 top-0 z-[-1]' alt="vector" />

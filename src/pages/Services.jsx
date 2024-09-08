@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { TranslateContext } from '../context/TranslateContext'
 import { fetchServicesData } from '../redux/slices/servicesSlice'
 import Loading from '../components/Loading/Loading'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function Services() {
     const { t } = useTranslation('global')
@@ -16,16 +17,18 @@ export default function Services() {
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(fetchServicesData())
+        if (error) {
+            toast.error(error);
+        }
     }, [])
-    console.log(data?.data);
-
     useEffect(() => {
         dispatch(fetchServicesData())
         if (error) {
-
+            toast.error(error);
         }
     }, [arLang])
     return <main>
+        <Toaster />
         {isLoading ? <Loading /> : <>
             <HeadBanner text={data?.data?.heroSection?.Title} bg={data?.data?.heroSection?.Image} disc={data?.data?.heroSection?.Description} />
             <section className='py-20'>

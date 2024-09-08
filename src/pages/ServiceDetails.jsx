@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchServicesDetalisData } from '../redux/slices/serviceDetailsSlice';
 import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading/Loading';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function ServiceDetails() {
     let { id } = useParams()
@@ -14,11 +15,18 @@ export default function ServiceDetails() {
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(fetchServicesDetalisData(id))
+        if (error) {
+            toast.error(error);
+        }
     }, [])
     useEffect(() => {
         dispatch(fetchServicesDetalisData(id))
+        if (error) {
+            toast.error(error);
+        }
     }, [arLang])
     return <main>
+        <Toaster />
         {isLoading? <Loading /> : <> 
         <Fade>
             <section className='h-[40vh] flex items-center justify-center'>

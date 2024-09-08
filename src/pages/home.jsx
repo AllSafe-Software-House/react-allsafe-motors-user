@@ -11,6 +11,7 @@ import { TranslateContext } from "../context/TranslateContext";
 import { fetchHomeSlice } from "../redux/slices/homeSlice";
 import Loading from "../components/Loading/Loading";
 import { fetchContactUsData } from "../redux/slices/contactSlice";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
   let { data, isLoading, error } = useSelector(({ homeData }) => homeData);
@@ -19,11 +20,18 @@ export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0)
     dispatch(fetchHomeSlice())
+    if (error) {
+      toast.error(error);
+  }
   }, []);
   useEffect(() => {
     dispatch(fetchHomeSlice())
+    if (error) {
+      toast.error(error);
+  }
   }, [arLang])
   return <main>
+    <Toaster />
     {isLoading? <Loading /> : 
     <>
     <HeroSection />

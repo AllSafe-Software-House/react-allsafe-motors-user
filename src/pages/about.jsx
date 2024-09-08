@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TranslateContext } from "../context/TranslateContext";
 import { fetchAboutData } from "../redux/slices/aboutSlice";
 import Loading from "../components/Loading/Loading";
+import toast, { Toaster } from "react-hot-toast";
 export default function About() {
     let { data, isLoading, error } = useSelector(({ aboutData }) => aboutData);
     const { arLang } = useContext(TranslateContext);
@@ -15,14 +16,19 @@ export default function About() {
     useEffect(() => {
         window.scrollTo(0, 0)
         dispatch(fetchAboutData())
+        if (error) {
+            toast.error(error);
+        }
     }, [])
     console.log(data?.data);
     useEffect(() => {
         dispatch(fetchAboutData())
         if (error) {
+            toast.error(error);
         }
     }, [arLang])
     return <>
+        <Toaster position="top-right" />
         {isLoading ? <Loading /> : <>
 
             <HeadBanner text={data?.data?.heroSection?.Title} about disc={data?.data?.heroSection?.Description} bg={data?.data?.heroSection?.Image} />
