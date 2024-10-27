@@ -1,5 +1,5 @@
 # This workflow installs Node.js dependencies, caches them for faster builds,
-# builds the source code if applicable, and runs tests on multiple Node.js versions.
+# builds the source code if applicable, runs tests, and uploads build artifacts.
 # More info: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Node.js CI
@@ -37,3 +37,9 @@ jobs:
       
       - name: Run tests
         run: npm test
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-folder
+          path: dist/  # Adjust this path if your output folder has a different name
