@@ -27,7 +27,7 @@ jobs:
         node-version: '20'  # Set Node.js version
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci --legacy-peer-deps
       working-directory: ./  # Root of the repo
 
     - name: Build React app
