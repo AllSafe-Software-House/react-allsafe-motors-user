@@ -1,47 +1,69 @@
-# This workflow installs Node.js dependencies, caches them for faster builds,
-# builds the source code if applicable, runs tests, and pushes build files to the repository.
-# More info: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: Build React App and Push to Production Branch
 
 on:
   push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+    branches:
+      - main  # Trigger on pushes to main branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-        # See the Node.js release schedule: https://nodejs.org/en/about/releases/
+    permissions:
+      contents: write  # Allow write access for the workflow
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Fetch full history for branch management
 
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+    - name: List directory contents
+      run: ls -la  # Debug step to verify files
 
-      - name: Build project
-        run: npm run build --if-present
-      
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Set Node.js version
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./  # Root of the repo
+
+    - name: Build React app
+      run: npm run build
+      working-directory: ./  # Root of the repo
+
+    - name: Create or Switch to Production Branch
+      run: |
+        git fetch origin
+        if git show-ref --quiet refs/heads/production; then
+          echo "Switching to production branch."
+          git checkout production
+        else
+          echo "Creating production branch."
+          git checkout --orphan production
+        fi
+
+    - name: Clear Production Branch Files
+      run: |
+        git rm -rf . || true  # Clear all existing files in production
+        echo "node_modules/" > .gitignore  # Ignore unnecessary files in production
+        echo "dist/" >> .gitignore
+        echo ".gitignore" >> .gitignore
+
+    - name: Move Build Files to Root and Commit
+      run: |
+        cp -a dist/. .  # Copy build output from dist to the root of production
+        git add .
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git commit -m "Deploy build to production"
+
+    - name: Push to Production Branch
+      run: |
+        git push https://alls4f3:${{ secrets.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iOCM }}@github.com/AllSafe-Software-House/test-ci-cd-react.git production --force
 
 
-      - name: Commit and push build files
-        run: |
-          git config --local user.name "shehabalqudiry"
-          git config --local user.email "omran.shehab40@gmail.com"
-          git add -f dist/
-          git commit -m "Add build files" || echo "No changes to commit"
-          git push https://x-access-token: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@github.com/AllSafe-Software-House/react-allsafe-motors-user.git HEAD:main
+      #  git push https://alls4f3:${{ secrets.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 }}@github.com/AllSafe-Software-House/test-ci-cd-react.git production
 
