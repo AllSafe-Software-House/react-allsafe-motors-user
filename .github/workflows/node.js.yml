@@ -62,7 +62,7 @@ jobs:
 
     - name: Push to Production Branch
       run: |
-        git push https://alls4f3:${{ secrets.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 }}@github.com/AllSafe-Software-House/test-ci-cd-react.git production --force
+        git push https://alls4f3:${{ secrets.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 }}@github.com/AllSafe-Software-House/react-allsafe-motors-user.git production --force
 
 
 
