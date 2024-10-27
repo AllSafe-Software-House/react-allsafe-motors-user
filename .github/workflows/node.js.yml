@@ -43,7 +43,7 @@ jobs:
           git config --local user.email "omran.shehab40@gmail.com"
           git add -f dist/
           git commit -m "Add build files" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.ALLSAFE_MOTORS }}@github.com/AllSafe-Software-House/react-allsafe-motors-user.git HEAD:main
+          git push https://x-access-token:${{ secrets.ALLSAFE_MOTORS }}@github.com/AllSafe-Software-House/react-allsafe-motors-user HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
