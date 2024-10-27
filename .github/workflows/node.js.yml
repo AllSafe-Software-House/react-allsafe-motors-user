@@ -62,7 +62,7 @@ jobs:
 
     - name: Push to Production Branch
       run: |
-         git push https://alls4f3:${{ secrets.PAT_TOKEN }}@github.com/AllSafe-Software-House/react-allsafe-motors-user.git production --force
+         git push https://allss4f3:${{ secrets.PAT_TOKEN }}@github.com/AllSafe-Software-House/react-allsafe-motors-user.git production --force
 
 
 
