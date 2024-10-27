@@ -1,14 +1,14 @@
 # This workflow installs Node.js dependencies, caches them for faster builds,
-# builds the source code if applicable, runs tests, and uploads build artifacts.
+# builds the source code if applicable, runs tests, and pushes build files to the repository.
 # More info: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -35,9 +35,15 @@ jobs:
       - name: Build project
         run: npm run build --if-present
       
+      - name: Run tests
+        run: npm test
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist-folder
-          path: dist/  # Adjust this path if your output folder has a different name
+      - name: Commit and push build files
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add dist/
+          git commit -m "Add build files" || echo "No changes to commit"
+          git push origin main  # Ensure this matches your default branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
