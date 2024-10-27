@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
   baseURL: "http://allsafemotors.web-allsafeeg.com/api",
-  // timeout: 10000,
+  timeout: 10000,
 });
 
 // Add a request interceptor to dynamically set the language

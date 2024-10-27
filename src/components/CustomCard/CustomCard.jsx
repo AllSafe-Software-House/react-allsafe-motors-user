@@ -28,7 +28,7 @@ export default function CustomCard({ image, name, disc, price, serv = false, id,
                     <MainButton text={t('custom-text.explore')} nav className={'bg-transparent rounded-md border border-[#414246] '} />
                 </Link>
             </div>
-            : <div className='border-white border flex justify-between flex-col rounded-lg overflow-hidden'>
+            : <div className='border-white hover:scale-105 duration-300 border flex justify-between flex-col rounded-lg overflow-hidden'>
                 <Link to={`/vehicles/vehicle-details/${id}`} className='group'>
                     <div>
                         <img src={image} className='w-full' alt={name} />

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { CiSearch } from 'react-icons/ci';
 import { HiBars3BottomLeft } from "react-icons/hi2";
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../assets/images/All Safe Motors png.png';
+import logo from '../../assets/images/All Safe Motors png.webp';
 import { menuContext } from '../../context/SideMenuContext';
 import { TranslateContext } from '../../context/TranslateContext';
 import SideBar from '../SideBar/SideBar.jsx';

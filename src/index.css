@@ -387,3 +387,9 @@ body {
 .react-tagsinput-input{
   flex: 1;
 }
+.pnlm-controls-container{
+  top: unset;
+  bottom: 20px;
+  left: unset;
+  right: 50px;
+}

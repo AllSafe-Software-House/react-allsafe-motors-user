@@ -107,12 +107,12 @@ export default function VehicleDetails() {
                                 }}
                                 onSwiper={setThumbSwiper}
                                 className="mySwiper"
-                                modules={[Navigation]}  // Removed Controller module
+                                modules={[Navigation]}
                             >
                                 {data?.data?.productDetails?.Images.map((image, i) => (
                                     <SwiperSlide key={i}>
-                                        <div className={`mt-5 rounded-lg overflow-hidden cursor-pointer ${i === activeIndex ? 'border-2 border-[#f00]' : 'border-2'}`}>
-                                            <img src={image} className='w-full h-[60px] object-cover' alt="thumbnail" />
+                                        <div className={`mt-5 w-[100px] mx-auto h-[100px]  overflow-hidden rounded-full cursor-pointer grayscale ${i === activeIndex ? 'border-2 border-[#f00] grayscale-0' : 'border-2'}`}>
+                                            <img src={image} className='w-full h-full object-cover' alt="thumbnail" />
                                         </div>
                                     </SwiperSlide>
                                 ))}

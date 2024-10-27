@@ -15,8 +15,8 @@ import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
   let { data, isLoading, error } = useSelector(({ homeData }) => homeData);
-  const { arLang } = useContext(TranslateContext);
   let dispatch = useDispatch()
+  const { arLang } = useContext(TranslateContext);
   useEffect(() => {
     window.scrollTo(0, 0)
     dispatch(fetchHomeSlice())

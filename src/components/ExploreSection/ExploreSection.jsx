@@ -7,7 +7,7 @@ export default function ExploreSection({ data }) {
     return <>
         <section className='py-10 text-white'>
             <div className="container">
-                <h2 className='font-main mb-4 font-bold text-[25px] md:text-[32px]'>{t('custom-text.exploreTitle')}</h2>
+                <h2 className=' mb-4 font-bold text-[25px] md:text-[32px]'>{t('custom-text.exploreTitle')}</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 flex-wrap">
                     {data?.map((brand =>
                         <div key={brand.ID} className='w-full my-2'>
