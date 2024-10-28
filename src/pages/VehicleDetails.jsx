@@ -43,7 +43,7 @@ export default function VehicleDetails() {
     const [thumbSwiper, setThumbSwiper] = useState(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
-    // Handle when the main Swiper slide chang
+    // Handle when the main Swiper slide chan
     useEffect(() => {
         if (mainSwiper) {
             mainSwiper.on('slideChange', () => {
